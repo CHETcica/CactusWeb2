@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- update the version number as needed -->
+
+    <script defer src="/__/firebase/7.17.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+  
+    <script defer src="/__/firebase/7.17.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.17.1/firebase-storage.js"></script>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w=="crossorigin="anonymous" />
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Dancing+Script:wght@600&display=swap"rel="stylesheet">
+  
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./css/style.css"> 
+
+</head>
+<body>
+    <!---flude========================================container-fluid================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="indexAfter.html"><img style="height:50px;width: auto;" src="./pictures/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./shop.php">Shop</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link " href="#">service</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link " href="./plantcare.html">plant care</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              About
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="./ourstory.html">our story</a>
+              <a class="dropdown-item" href="./Ourstore.html">our store</a>
+              <a class="dropdown-item" href="./contactus.html">contact us</a>
+
+            </div>
+          </li>
+
+        </ul>
+
+        
+        
+
+        
+        <form class="form-inline my-2 my-lg-0">
+          
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          
+          <a class="px-2" href="#">
+            <span class="oi oi-magnifying-glass"></span>
+          </a>
+        </form>
+        
+        <a href="profile.php">
+            <img class="icon-img-profile-onnav" src="./pictures/img_415067.png" alt="">
+
+        </a>
+         
+           
+        
+
+
+        <!-- <a class="px-2 " href="./login.php">
+          <span class="oi oi-person"></span>
+        </a> -->
+
+      </div>
+    </nav>
+    <section class="container pt-5">
+        <div class="row pt-5">
+
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <h2>
+                  Adress Details
+                </h2>
+                <form>
+                    <div class="form-row">
+                      <div class="col pt-2">
+                        <label for="inputEmail4">First name</label>
+                        <input type="text" class="form-control" placeholder="First name">
+                      </div>
+                      <div class="col pt-2">
+                        <label for="inputEmail4">Last name</label>
+                        <input type="text" class="form-control" placeholder="Last name">
+                      </div>
+                    </div>
+                    <!-- <div class="form-row">
+                        <div class="form-group col-md-6 pt-2">
+                          <label for="inputEmail4">Email</label>
+                          <input type="email" class="form-control" placeholder="...@Mail.com" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-6 pt-2">
+                          <label for="inputPassword4">Password</label>
+                          <input type="password" class="form-control" id="inputPassword4">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                      </div> -->
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                          <label for="inputDistrict">District</label>
+                          <input type="text" class="form-control" id="inputDistrict">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputCity">City</label>
+                          <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="inputState">State</label>
+                          <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <label for="inputZip">Zip</label>
+                          <input type="text" class="form-control" id="inputZip">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <label class="form-check-label" for="gridCheck">
+                            Check me out
+                          </label>
+                        </div>
+                      </div>
+                     
+                  </form>
+            </div>
+            <div class="col-lg-6 col-12">
+                <h2>
+                    Your Order
+                </h2>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <h6>Suptotal</h6>
+                    </div>
+                    <div class="col ">
+                        <h6 class="text-align-right pr-2">--฿</h6>
+                    </div>
+                </div>    
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <h6>Shipping</h6>
+                    </div>
+                    <div class="col ">
+                        <h6 class="text-align-right pr-2">35฿</h6>
+                    </div>
+                </div>
+                <hr>
+                <div class="card">
+
+                    <!-- <div class="form-check form-check-bank"data-toggle="modal" data-target="#bank">
+                      <input class="form-check-input" type="radio" name="pay" id="exampleRadios1" value="option1" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                        Use Mobilebanking
+                      </label>
+                    </div>
+                    
+                      <div class="modal fade modal-dialog fluid" id="bank" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Select you bank</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body ">
+                            
+                            <div class="form-check ">
+                              <input class="form-check-input " type="radio" name="bank" data-dismiss="modal" id="exampleRadios3" value="option1" checked>
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/Krungthai.png" alt="">
+                                  <div  class="caption-bank">
+                                    <h5 >Krung Thai</h5>
+                                  </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option2">
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/kasikorn.png" alt="">
+                                <div class="caption-bank">
+                                  <h5 >KasikornBank</h5>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option3" >
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/Krungsre.png" alt="">
+                                <div  class="caption-bank">
+                                  <h5 >Bank of Ayudhaya</h5>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option4">
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/./aomsin.png" alt="">
+                                <div  class="caption-bank">
+                                  <h5 >Government Saving Bank</h5>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option5" >
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/./bangkok.png" alt="">
+                                <div  class="caption-bank">
+                                  <h5 >Bangkok Bank</h5>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option6">
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/./thaipanich.png" alt="">
+                                <div  class="caption-bank">
+                                  <h5 >Siam Commercial </h5>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option7" >
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/./thanachart.png" alt="">
+                                <div  class="caption-bank">
+                                  <h5 >Thanachart Bank</h5>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option8">
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/./promtpay.png" alt="">
+                                <div  class="caption-bank">
+                                  <h5 >PromptPay</h5>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bank"   id="exampleRadios3" value="option9" >
+                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
+                                <img class="icon-bank" src="./pictures/icon/./Wallet.png" alt="">
+                                <div  class="caption-bank">
+                                  <h5 >TrueMoneyWallet</h5>
+                                </div>
+                              </label>
+                            </div>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                      </div> -->
+                    <div class="form-check form-check-bank"data-toggle="modal" data-target="#Slibe">
+                      <input class="form-check-input" type="radio" name="pay" id="exampleRadios1" value="option1" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                        Use Mobilebanking
+
+                      </label>
+                    </div>
+                      <!-- Vertically centered scrollable modal -->
+                      <div class="modal" id="Slibe" tabindex="-1">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Attach a receipt</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+
+                              <input type="file">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Payment_completed">
+                                Save changes
+                              </button>
+                              
+
+                                <!-- horizontal centered scrollable modal -->
+                                  <div class="modal" id="Payment_completed" tabindex="-1">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title">Payment completed</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <img style="width: auto; height: 450px;" src="./pictures/./FAVPNG_check-mark-transparency_448se54Q.png" alt="">
+                                          
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          <button type="button" class="btn btn-primary"><a href="./Transport.html">Go to Transportation</a></button>
+                                        </div>
+                                      </div>
+                                    </div> 
+                                  </div>
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                    
+                      <div class="form-check form-check-bank">
+                        <input class="form-check-input" type="radio" name="pay" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios1">
+                          Payment on destination
+                        </label>
+                      </div>    
+                    <div class="form-check form-check-bank">
+                      <input class="form-check-input" type="radio" name="pay" id="exampleRadios2" value="option2">
+                      <label class="form-check-label" for="exampleRadios1">
+                        Pay by credit card
+                        <img src="./pictures/credit.png" alt="">
+                      </label>
+                    </div>
+                    
+                    
+                    <button type="button" class="btn btn-primary btn-bottom ml-3" data-toggle="modal" data-target="#Payment_completed1">
+                      submit
+                    </button>
+                    <!-- horizontal centered scrollable modal -->
+                    <div class="modal" id="Payment_completed1" tabindex="-1">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Payment completed</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <img style="width: auto; height: 450px;" src="./pictures/./FAVPNG_check-mark-transparency_448se54Q.png" alt="">
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary"><a href="./Transport.html">Go to Transportation</a></button>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+    <footer class="footer mt-3">
+        <div class="row">
+          <div class="col-lg col-12   ">
+            <h2 class="font-Dancing-Script">Shop</h2>
+            <div>
+              <p>cactus</p>
+              <p>garden</p>
+            </div>
+          </div>
+          <div class="col-lg col-12 ">
+            <h2 class="font-Dancing-Script">Help</h2>
+            <p>contact us</p>
+            <p>shippin policy</p>
+            <p>privacy policy</p>
+            
+          </div>
+          <div class="col-lg col-12 ">
+            <h2 class="font-Dancing-Script">Follow</h2>
+            <div>
+              <p>© 2019 Oasis-cactus</p>
+              <a href="#"><img src="./pictures/icon/Mwssage.png" alt="" class="icon-style"></a>
+              <a href="#"><img src="./pictures/icon/line.png" alt="" class="icon-style"></a>
+              <a href="#"><img src="./pictures/icon/ig1.png" alt="" class="icon-style"></a>
+            </div>
+          </div>
+          <div class="col-lg col-12 ">
+            <h2 class="font-Dancing-Script">About</h2>
+            <p>our story</p>
+            <p>service</p>
+          </div>
+          <div class="col-lg col-12 ">
+            <h2 class="font-Dancing-Script">Visit</h2>
+            <p>Oasis Shop</p>
+            <p>24H Shop</p>
+            <p> 07:00AM - 11:00PM </p>
+          </div>
+        </div>
+    </footer>
+    <script src="./bootstrap-4.5.0-dist/js/jQuery.js"></script>
+    <script src="./bootstrap-4.5.0-dist/js/poper.js"></script>
+    <script src="./bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
