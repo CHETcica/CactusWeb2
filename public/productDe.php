@@ -169,7 +169,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     <div class="container">
                         <div class="card-body-1">
 
-                          <a href="./php/insertbasket.php?Cactusid=<?php echo $row['Cac_id'] ?>&Customerid=<?php echo '3' ?>&CactusAmount=" id="getcactus" class="card-link AtcPosition">
+                          <a href="./php/insertbasket.php?Cactusid=<?php echo $row['Cac_id'] ?>&Customerid=<?php echo '1' ?>&CactusAmount=" id="getcactus" class="card-link AtcPosition">
                             <button type="submit" class="btn btn-primary">Add to Cart</button>
                           </a>
                             
