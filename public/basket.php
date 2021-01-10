@@ -1,8 +1,8 @@
 <?php
 
 require('connect.php');
-$sql = "SELECT `BasketID`, `Amout`,`Cac_img`,`Cac_name`,`Cac_Price`, `Sumprice`, `StatusBK`, `CusID`, product.Cac_img 
-FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `CusID`=1";
+$sql = "SELECT `BasketID`, `Amout`,`Cac_img`,`Cac_name`,`Cac_Price`, `Sumprice`, `StatusBK`, `uid`, product.Cac_img 
+FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `uid`=1";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
@@ -11,99 +11,16 @@ $stmt->execute();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cactus</title>
-  
-  <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- update the version number as needed -->
+<?php
+        include "./component/head.php";
+?>
 
-  <script defer src="/__/firebase/7.17.1/firebase-app.js"></script>
-  <!-- include only the Firebase features as you need -->
-  
-  <script defer src="/__/firebase/7.17.1/firebase-auth.js"></script>
-  <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
-  <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
-  <script defer src="/__/firebase/7.17.1/firebase-storage.js"></script>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w=="crossorigin="anonymous" />
-  <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Dancing+Script:wght@600&display=swap"rel="stylesheet">
-  
-  <script src="./main.js"></script>
-  <link rel="stylesheet" href="./css/style.css"> 
-  <style>
-      
-  </style>
-</head>
 <body>
-  <!---flude========================================container-fluid================================================== -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="indexAfter.html"><img style="height:50px;width: auto;" src="./pictures/logo.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./shop.php">Shop</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link " href="#">service</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link " href="./plantcare.html">plant care</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              About
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./ourstory.html">our story</a>
-              <a class="dropdown-item" href="./Ourstore.html">our store</a>
-              <a class="dropdown-item" href="./contactus.html">contact us</a>
+    <!---flude========================================container-fluid================================================== -->
+    <?php
+        include "./component/navbar.php";
+    ?>
 
-            </div>
-          </li>
-
-        </ul>
-
-        
-        
-
-        
-        <form class="form-inline my-2 my-lg-0">
-          
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          
-          <a class="px-2" href="#">
-            <span class="oi oi-magnifying-glass"></span>
-          </a>
-        </form>
-        
-        <a href="profile.php">
-            <img class="icon-img-profile-onnav" src="./pictures/img_415067.png" alt="">
-
-        </a>
-         
-           
-        
-
-
-        <!-- <a class="px-2 " href="./login.php">
-          <span class="oi oi-person"></span>
-        </a> -->
-
-      </div>
-    </nav>
 <section class="container mb-3">
   <div class="row">
     <div class="col-lg-9">
@@ -150,7 +67,7 @@ $stmt->execute();
                   <!-- <input type="checkbox" class="form-check-input " id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1"></label> -->
               
-                <form action="./php/multipleDelete.php" method="POST">
+                <!-- <form action="./php/multipleDelete.php" method="POST"> -->
                     <input class="form-check-input " type="checkbox" name="checkDelete[]"  value="<?php echo $row['BasketID'];?>" id="checkdelete">
               </div>    
           </div>
@@ -195,10 +112,10 @@ $stmt->execute();
     <?php
       }
     ?> 
-    </form>
+    <!-- </form>
 
       <input type="submit" value="SelectAll" onclick="checkAll()" class="btn btn-primary" >
-      <input type="submit" value="ยกเลิก" onclick="uncheckAll()" class="btn btn-danger" >
+      <input type="submit" value="ยกเลิก" onclick="uncheckAll()" class="btn btn-danger" > -->
 
 
 
@@ -231,44 +148,10 @@ $stmt->execute();
 
 
 
-  <footer class="footer">
-    <div class="row">
-      <div class="col-lg col-12   ">
-        <h2 class="font-Dancing-Script">Shop</h2>
-        <div>
-          <p>cactus</p>
-          <p>garden</p>
-        </div>
-      </div>
-      <div class="col-lg col-12 ">
-        <h2 class="font-Dancing-Script">Help</h2>
-        <p>contact us</p>
-        <p>shippin policy</p>
-        <p>privacy policy</p>
-
-      </div>
-      <div class="col-lg col-12 ">
-        <h2 class="font-Dancing-Script">Follow</h2>
-        <div>
-          <p>© 2019 Oasis-cactus</p>
-          <a href="#"><img src="./pictures/icon/Mwssage.png" alt="" class="icon-style"></a>
-          <a href="#"><img src="./pictures/icon/line.png" alt="" class="icon-style"></a>
-          <a href="#"><img src="./pictures/icon/ig1.png" alt="" class="icon-style"></a>
-        </div>
-      </div>
-      <div class="col-lg col-12 ">
-        <h2 class="font-Dancing-Script">About</h2>
-        <p>our story</p>
-        <p>service</p>
-      </div>
-      <div class="col-lg col-12 ">
-        <h2 class="font-Dancing-Script">Visit</h2>
-        <p>Oasis Shop</p>
-        <p>24H Shop</p>
-        <p> 07:00AM - 11:00PM </p>
-      </div>
-    </div>
-  </footer>
+  <!-- =====================================================   footer  ===================================================== -->
+  <?php
+        include "./component/footer.php";
+    ?>
   <script src="./bootstrap-4.5.0-dist/js/jQuery.js"></script>
   <script src="./bootstrap-4.5.0-dist/js/poper.js"></script>
   <script src="./bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>

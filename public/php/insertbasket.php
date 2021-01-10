@@ -15,42 +15,46 @@
 
     var_dump($Cac_id);
     var_dump($CactusAmount);
-    var_dump($_GET["Customerid"]);
+    var_dump($Cusid);
 
 
     
 
-    require ('../connect.php');
-    $sql1 = "SELECT * FROM basket WHERE CusID ='$Cusid' and Cac_id = '$Cac_id' " ;
+
+    $sql1 = "SELECT * FROM basket WHERE `uid` ='$Cusid' and Cac_id = '$Cac_id' ";
     $stmt1 = $conn->prepare($sql1);
     $stmt1->execute();
     $row1 = $stmt1->fetch(PDO::FETCH_ASSOC);
     $basketId = $row1['BasketID'];
+
+    var_dump($basketId);
+
      if(!empty($row1["BasketID"])){
-        require '../connect.php';
-        $sql="UPDATE `basket` SET `Amout`=:Amount,`Sumprice`=:Sumprice WHERE `BasketID`= $basketId";
-        $stmt = $conn->prepare($sql);
-    
+        
+        echo "updete";
+       
+        $sql = "UPDATE `basket` SET `Amout`='$CactusAmount',`Sumprice`='$Sum' WHERE `BasketID`= $basketId";
+        $stmt1 = $conn->prepare($sql);
+        // var_dump($Sum);
+        // var_dump($CactusAmount);
+        echo "<br>";
+
         $stmt1->bindParam(':Amount',$CactusAmount);
         $stmt1->bindParam(':Sumprice',$Sum);
         $stmt1->bindParam(':CusID',$_GET["Customerid"]);
         $stmt1->bindParam(':Cac_id',$Cac_id);
     
-        var_dump($sql);
+    
         
         $StatusBK='0';
         if ($stmt1->execute()):
-            $message = 'yes';
-            header("location:../basket.php");
+            $message = '';
+            header('location:../basket.php');
             exit(0);
+            var_dump('update succses');
         else:
             $message='Error';
-            echo $sql."<br>";
-            echo $CactusAmount."<br>";
-            echo $Sum."<br>";
-            echo $StatusBK."<br>";
-            echo $_GET["Customerid"]."<br>";
-            echo $Cac_id."<br>";
+            
             
             
         endif;
@@ -59,10 +63,9 @@
     
     
     
-     }
-     else if(empty($row1["BasketID"])){
-        require '../connect.php';
-        $sql="INSERT INTO `basket`(BasketID,Amout, Sumprice, StatusBK,CusID,Cac_id) 
+     }else if(empty($row1["BasketID"])){
+        
+        $sql="INSERT INTO `basket`(BasketID,Amout, Sumprice, StatusBK,`uid`,Cac_id) 
                             VALUES (' ', :Amount, :Sumprice, '0', :CusID, :Cac_id);";
         $stmt = $conn->prepare($sql);
     
@@ -71,7 +74,6 @@
         $stmt->bindParam(':CusID',$_GET["Customerid"]);
         $stmt->bindParam(':Cac_id',$Cac_id);
     
-        var_dump($sql);
         
         $StatusBK='0';
         if ($stmt->execute()):
@@ -80,20 +82,11 @@
             exit(0);
         else:
             $message='Error';
-            echo $sql."<br>";
-            echo $CactusAmount."<br>";
-            echo $Sum."<br>";
-            echo $StatusBK."<br>";
-            echo $_GET["Customerid"]."<br>";
-            echo $Cac_id."<br>";
-            
+   
             
         endif;
         echo $message;
         $conn = null;
-    
-    
-    
     
      }
 ?>

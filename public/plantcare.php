@@ -68,69 +68,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="indexAfter.html"><img style="height:50px;width: auto;" src="./pictures/logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./shop.php">Shop</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link " href="#">service</a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link " href="./plantcare.html">plant care</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                About
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="./ourstory.html">our story</a>
-                <a class="dropdown-item" href="./Ourstore.html">our store</a>
-                <a class="dropdown-item" href="./contactus.html">contact us</a>
-  
-              </div>
-            </li>
-  
-          </ul>
-  
-          
-          
-  
-          
-          <form class="form-inline my-2 my-lg-0">
-            
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            
-            <a class="px-2" href="#">
-              <span class="oi oi-magnifying-glass"></span>
-            </a>
-          </form>
-          
-          <a href="profile.php">
-              <img class="icon-img-profile-onnav" src="./pictures/img_415067.png" alt="">
-  
-          </a>
-           
-             
-          
-  
-  
-          <!-- <a class="px-2 " href="./login.php">
-            <span class="oi oi-person"></span>
-          </a> -->
-  
-        </div>
-      </nav>
+    <!---flude========================================container-fluid================================================== -->
+    <?php
+        include "./component/navbar.php";
+    ?>
     <div class="container-fluid">
         <div class="bgplantcare mt-5">
             <div id="bgblack">
@@ -232,44 +173,10 @@
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="row">
-              <div class="col-lg col-12   ">
-                <h2 class="font-Dancing-Script">Shop</h2>
-                <div>
-                  <p>cactus</p>
-                  <p>garden</p>
-                </div>
-              </div>
-              <div class="col-lg col-12 ">
-                <h2 class="font-Dancing-Script">Help</h2>
-                <p>contact us</p>
-                <p>shippin policy</p>
-                <p>privacy policy</p>
-                
-              </div>
-              <div class="col-lg col-12 ">
-                <h2 class="font-Dancing-Script">Follow</h2>
-                <div>
-                  <p>© 2019 Oasis-cactus</p>
-                  <a href="#"><img src="./pictures/icon/Mwssage.png" alt="" class="icon-style"></a>
-                  <a href="#"><img src="./pictures/icon/line.png" alt="" class="icon-style"></a>
-                  <a href="#"><img src="./pictures/icon/ig1.png" alt="" class="icon-style"></a>
-                </div>
-              </div>
-              <div class="col-lg col-12 ">
-                <h2 class="font-Dancing-Script">About</h2>
-                <p>our story</p>
-                <p>service</p>
-              </div>
-              <div class="col-lg col-12 ">
-                <h2 class="font-Dancing-Script">Visit</h2>
-                <p>Oasis Shop</p>
-                <p>24H Shop</p>
-                <p> 07:00AM - 11:00PM </p>
-              </div>
-            </div>
-              </footer>
+        <!-- =====================================================   footer  ===================================================== -->
+    <?php
+        include "./component/footer.php";
+    ?>
     </div>
 
 </body>
