@@ -1,24 +1,18 @@
-<?php
-
-require('connect.php');
-$sql = "SELECT `BasketID`, `Amout`,`Cac_img`,`Cac_name`,`Cac_Price`, `Sumprice`, `StatusBK`, `uid`, product.Cac_img 
-FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `uid`=1";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
         include "./component/head.php";
-?>
+ ?>
 
 <body>
     <!---flude========================================container-fluid================================================== -->
     <?php
         include "./component/navbar.php";
+        require('connect.php');
+        $sql = "SELECT `BasketID`, `Amout`,`Cac_img`,`Cac_name`,`Cac_Price`, `Sumprice`, `StatusBK`, `uid`, product.Cac_img 
+        FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `uid`=1";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
     ?>
 
 <section class="container mb-3">

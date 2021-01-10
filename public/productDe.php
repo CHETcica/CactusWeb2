@@ -1,16 +1,3 @@
-<?php
-
-$cactusid = $_GET["idemp"];
-
-require('connect.php');
-$sql = "SELECT * FROM product WHERE `Cac_id`=$cactusid";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +9,17 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <!---flude========================================container-fluid================================================== -->
     <?php
         include "./component/navbar.php";
-    ?>
+    
+
+    $cactusid = $_GET["idemp"];
+
+    require('connect.php');
+    $sql = "SELECT * FROM product WHERE `Cac_id`=$cactusid";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>  
     <div class="container my-2">
         <div class="row pt-5">
             <div class="col-12">

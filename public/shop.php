@@ -1,11 +1,8 @@
-<?php
 
-require('connect.php');
-$sql = "SELECT * FROM product";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
 
-?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -46,7 +43,11 @@ $stmt->execute();
 <body>
     <!---flude========================================container-fluid================================================== -->
     <?php
-        include "./component/navbar.php";
+        require "./component/navbar.php";
+        require('connect.php');
+        $sql = "SELECT * FROM product";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
     ?>
     <div id="carouselExampleSlidesOnly" class="carousel  slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -115,9 +116,7 @@ $stmt->execute();
 
         <section>
             <div class="container">
-                <!-- <div class="row ">
-        <h4 class="font-Sriracha py-5">Astrophytum</h4>
-      </div> -->
+                
                 <div class="row section-row-up">
 
                     <?php

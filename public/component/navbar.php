@@ -21,7 +21,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link " href="./plantcare.html">plant care</a>
+            <a class="nav-link " href="./plantcare.php">plant care</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -46,10 +46,7 @@
             <span class="oi oi-magnifying-glass"></span>
           </a>
         </form> 
-        
-         <?php
-          
-          
+        <?php
           if(isset($_SESSION['user_login'])){
             require("../public/connect.php");
             $userid = $_SESSION['user_login'];
@@ -58,12 +55,11 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            ?>
+        ?>
             <a href="profile.php">
               <img class="icon-img-profile-onnav" src="<?php echo $row['uimg']?>" alt="">
             </a>
           <?php
-            
             }else{
           ?>
             <a class="px-2 " href="./login.php">

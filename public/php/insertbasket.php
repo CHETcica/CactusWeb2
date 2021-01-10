@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $Cac_id = $_GET["Cactusid"];
     $Cusid = $_GET["Customerid"];
     $CactusAmount = $_GET["CactusAmount"];
