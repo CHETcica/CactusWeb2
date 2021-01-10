@@ -1,7 +1,7 @@
 <?php
   session_start();
-  $uid = '1';
-  $_SESSION['user_login'] =$uid;
+  
+  $_SESSION['user_login'] =1;
 ?>
 
 
@@ -19,9 +19,7 @@
           <li class="nav-item">
             <a class="nav-link" href="./shop.php">Shop</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link " href="#">service</a>
-          </li> -->
+          
           <li class="nav-item">
             <a class="nav-link " href="./plantcare.html">plant care</a>
           </li>
@@ -50,10 +48,13 @@
         </form> 
         
          <?php
-          if(empty($_SESSION['user_login'])){
-            include "./public/connect.php";
-            $uid = $_SESSION['user_login'];
-            $sql = "SELECT * FROM `user` WHERE `uid`= '$uid'";
+          
+          
+          if(isset($_SESSION['user_login'])){
+            require("../public/connect.php");
+            $userid = $_SESSION['user_login'];
+            
+            $sql = "SELECT * FROM `user` WHERE `uid`= '$userid'";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -62,6 +63,7 @@
               <img class="icon-img-profile-onnav" src="<?php echo $row['uimg']?>" alt="">
             </a>
           <?php
+            
             }else{
           ?>
             <a class="px-2 " href="./login.php">

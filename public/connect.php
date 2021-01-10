@@ -22,7 +22,7 @@
 
     try {
         $conn = new PDO("mysql:host=$serverName;dbname=$dbName;", $userName, $userPassword);
-        echo "<pre>" . "You are now connecting to database!!" . "</pre>";
+        echo "<pre>" . "" . "</pre>";
     } catch (PDOException $e) {
         echo "Sorry! You cannot connect to database";
     }

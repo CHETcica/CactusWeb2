@@ -1,7 +1,8 @@
 <?php
-    
+    session_start();
+    $userid = $_SESSION['user_login'];
     require ('connect.php');
-    $sql = "SELECT * FROM customer WHERE CusID ='3'" ;
+    $sql = "SELECT * FROM user WHERE uid = $userid" ;
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -26,18 +27,18 @@
      <div class="container bg-profile">
           <div class="row">
             <div class="col-lg-4 col- 12 ">
-              <img class="img-profile" src="<?php echo $row['Imgprofile'] ?>" alt="">
+              <img class="img-profile" src="<?php echo $row['uimg'] ?>" alt="">
               <div class="bg-img-profile"></div>
               
             </div>
             <div class="col-lg-8 col-12">
-              <div class="id_user">ID : <div class="id_user_fromtable">0000<?php echo $row['CusID'] ?></div></div>
+              <div class="id_user">ID : <div class="id_user_fromtable">0000<?php echo $row['uid'] ?></div></div>
               <hr>
-              <div class="name_user">Name : <div class="name_user_fromtable"><?php echo $row['Name'] ?></div></div>
-              <div class="name_user">Lastname : <div class="name_user_fromtable"><?php echo $row['Lastname'] ?></div></div>
-              <div class="name_user">Email : <div class="name_user_fromtable"><?php echo $row['Email'] ?></div></div>
-              <div class="name_user">Phone : <div class="name_user_fromtable"><?php echo $row['Phone'] ?></div></div>
-              <div class="name_user">Address : <div class="name_user_fromtable"><?php echo $row['Address'] ?></div></div>
+              <div class="name_user">Name : <div class="name_user_fromtable"><?php echo $row['uname'] ?></div></div>
+              
+              <div class="name_user">Email : <div class="name_user_fromtable"><?php echo $row['email'] ?></div></div>
+              <div class="name_user">Phone : <div class="name_user_fromtable"><?php echo $row['phone'] ?></div></div>
+              <div class="name_user">Address : <div class="name_user_fromtable"><?php  ?></div></div>
               <button type="button" class="btn btn-outline-success btn-group-profile">Edit</button>
               <button type="button" class="btn btn-outline-danger btn-group-profile">Close</button>
               <a href="index.html">
