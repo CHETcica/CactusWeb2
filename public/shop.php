@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,7 +113,7 @@
                 <div class="row section-row-up">
 
                     <?php
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     ?>
 
                         <div class="col-lg-3 col-sm-6 col-12 mt-5">
@@ -158,8 +151,6 @@
                     <?php
                     }
                     ?>
-
-
         </section>
 
 

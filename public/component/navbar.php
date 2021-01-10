@@ -1,12 +1,12 @@
 <?php
   session_start();
   
-  $_SESSION['user_login'] =1;
-?>
+  $_SESSION['user_login'] ='1';
+?> 
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="navbar-brand" href="index.html"><img style="height:50px;width: auto;" src="./pictures/logo.png" alt=""></a>
+      <a class="navbar-brand" href="index.php"><img style="height:50px;width: auto;" src="./pictures/logo.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -59,16 +59,17 @@
             <a href="profile.php">
               <img class="icon-img-profile-onnav" src="<?php echo $row['uimg']?>" alt="">
             </a>
-          <?php
+        <?php
             }else{
-          ?>
+        ?>
             <a class="px-2 " href="./login.php">
               <span class="oi oi-person"></span>
             </a>
-          <?php    
-            }
-          ?>
+        <?php    
+           }
+        ?>
       </div>
     </nav>
+
 
     

@@ -41,8 +41,8 @@
               <div class="name_user">Address : <div class="name_user_fromtable"><?php  ?></div></div>
               <button type="button" class="btn btn-outline-success btn-group-profile">Edit</button>
               <button type="button" class="btn btn-outline-danger btn-group-profile">Close</button>
-              <a href="index.html">
-                  <button type="button" class="btn btn-outline-warning btn-group-profile">Logout</button>
+              <a  class="btn btn-outline-warning btn-group-profile" href="./php/logout.php">
+                 Logout
               </a>
             </div>
           </div>   
@@ -52,6 +52,8 @@
         include "./component/footer.php";
     ?>
   <script src="./main.js"></script>
-    
+  <script>
+
+  </script>  
   </body>
   </html>
