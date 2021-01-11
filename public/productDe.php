@@ -86,7 +86,8 @@
                     <div class="container">
                         <div class="card-body-1">
 
-                          <a href="./php/insertbasket.php?Cactusid=<?php echo $row['Cac_id'] ?>&Customerid=<?php echo '1' ?>&CactusAmount=" id="getcactus" class="card-link AtcPosition">
+                          <a href="./php/insertbasket.php?Cactusid=<?php echo $row['Cac_id'] ?>&Customerid=<?php echo $_SESSION['user_login'] ?>&CactusAmount=" 
+                          id="getcactus" class="card-link AtcPosition">
                             <button type="submit" class="btn btn-primary">Add to Cart</button>
                           </a>
 
@@ -229,6 +230,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./main.js"></script>
 
+
     <script>
       $('.btn-plus, .btn-minus').on('click', function(e) {
         const isNegative = $(e.target).closest('.btn-minus').is('.btn-minus');
@@ -238,6 +240,7 @@
         }
         
       })
+      
       let link = document.getElementById("getcactus");
         link.addEventListener('click',Getcactus );
 
@@ -246,14 +249,20 @@
           event.preventDefault();
 
         let CactusAmount = document.getElementById("CactusAmount");
+          //5
+
         let linkVal = link.getAttribute('href');
+        //localhost/avice/?name=cpu&num=
+
+
         linkVal += CactusAmount.value
+        //localhost/avice/?name=cpu&num=5
                                
-        window.open(linkVal, '_self');      
+        window.open(linkVal, '_self');   
+        //<a href="localhost/avice/?name=cpu&num=5"></a> 
+        
+        $_GET['num']
       }
-
-
-      
 
     </script>
     
