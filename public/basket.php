@@ -36,7 +36,7 @@
         </div>
         <div class="col">
             <p>
-                number
+                amount
             </p>
         </div>
         <div class="col">
@@ -61,8 +61,8 @@
                   <!-- <input type="checkbox" class="form-check-input " id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1"></label> -->
               
-                <!-- <form action="./php/multipleDelete.php" method="POST"> -->
-                    <input class="form-check-input " type="checkbox" name="checkDelete[]"  value="<?php echo $row['BasketID'];?>" id="checkdelete">
+                <form action="./php/multipleDelete.php" method="POST">
+                    <input class="form-check-input " type="checkbox" name="checkDelete[]"  value="<?php echo $row['BasketID'];?>" >
               </div>    
           </div>
         <div class="col-lg-4 col-1 ">
@@ -82,13 +82,13 @@
             <p >
               <div class="input-group">
                   <div class="input-group-prepend">
-                    <button class="minusplus btn btn-outline-secondary btn-minus">-</button>
+                    <button type="button" class="minusplus btn btn-outline-secondary btn-minus">-</button>
                   </div>
-                  <input class="form-control text-center" value="<?php echo $row['Amout']?>" min="1" max="1000" type="number" id="amount">
+                  <input class="form-control text-center" value="<?php echo $row['Amout']?>" min="1" max="1000" type="number" >
                   <div class="input-group-append">
-                    <button class="minusplus btn btn-outline-secondary btn-plus">+</button>
-                  </div>
+                    <button type="button" class="minusplus btn btn-outline-secondary btn-plus">+</button>
                 </div>
+              </div>
             </p>
         </div>
         <div class="col-lg-2 col-1 sumprice">
@@ -106,10 +106,9 @@
     <?php
       }
     ?> 
-    <!-- </form>
-
-      <input type="submit" value="SelectAll" onclick="checkAll()" class="btn btn-primary" >
-      <input type="submit" value="ยกเลิก" onclick="uncheckAll()" class="btn btn-danger" > -->
+    </form>
+    <button button id="selectAll" type="button" class="btn btn-primary">select all</button>
+    <button button id="selectAllcancel" type="button" class="btn btn-danger">cancel</button>
 
 
 
@@ -133,15 +132,8 @@
       </div>
       
     </div>
-  </div>
-  
+  </div> 
 </section>
-  
-
-
-
-
-
   <!-- =====================================================   footer  ===================================================== -->
   <?php
         include "./component/footer.php";
@@ -150,35 +142,51 @@
   <script src="./bootstrap-4.5.0-dist/js/poper.js"></script>
   <script src="./bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
   <script>
-    $('.btn-plus, .btn-minus').on('click', function(e) {
-      const isNegative = $(e.target).closest('.btn-minus').is('.btn-minus');
-      const input = $(e.target).closest('.input-group').find('input');
-      const amountElem = document.getElementById('amount');
-       const totalElem = document.getElementById('total');
+    // $('.btn-plus, .btn-minus').on('click', function(e) {
+    //   const isNegative = $(e.target).closest('.btn-minus').is('.btn-minus');
+    //   const input = $(e.target).closest('.input-group').find('input');
+    //   const amountElem = document.getElementById('amount');
+    //    const totalElem = document.getElementById('total');
 
     
      
-      if (input.is('input')) {
-        input[0][isNegative ? 'stepDown' : 'stepUp']()
-        totalElem.innerText = amountElem.value * document.getElementById('price').innerText;
+    //   if (input.is('input')) {
+    //     input[0][isNegative ? 'stepDown' : 'stepUp']()
+    //     totalElem.innerText = amountElem.value * document.getElementById('price').innerText;
 
-      }
+    //   }
       
+    // })
+
+    const checkboxElemArr = Array.from(document.querySelectorAll('input[name="checkDelete[]"]'));
+    console.log(checkboxElemArr);
+    const selectAll = document.querySelector('#selectAll');
+    console.log(selectAll);
+
+    selectAll.addEventListener('click', () => {
+      checkboxElemArr.forEach(elem => {
+        elem.checked = true;
+      });
     })
-    function checkAll(){
-            console.log("เลือกทั้งหมด")
-            let form_element=document.forms[1].length;
-            for(i=0;i<form_element-1;i++){
-                document.forms[1].elements[i].checked=true;
-            }
-        }
-        function uncheckAll(){
-            console.log("ยกเลิก")
-            let form_element=document.forms[1].length;
-            for(i=0;i<form_element-1;i++){
-                document.forms[1].elements[i].checked=false;
-            }
-        }
+    
+    const selectAllcancel = document.querySelector('#selectAllcancel');
+    console.log(selectAll);
+
+    selectAllcancel.addEventListener('click', () => {
+      checkboxElemArr.forEach(elem => {
+        elem.checked = false;
+      });
+    })
+
+
+
+
+
+
+
+
+
+
 
     
 
