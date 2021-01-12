@@ -24,14 +24,14 @@
             <div class="carousel-item active">
                 <img src="./pictures/caruosel1.jpg" alt="Los Angeles" width="1920" height="500" class="img-fluid">
                 <div style="padding-bottom: 10%;padding-left: 40%; text-align: left;color: #606c38;" class="carousel-caption ">
-                    <h3 class="" style="margin: 0; font-size: 60px;" data-aos="fade-down">Welcom</h3>
-                    <p class="font-Sriracha" data-aos="fade-left">to Oasis</p>
+                    <h3 class="" style="margin: 0; font-size: 60px;">Welcom</h3>
+                    <p class="font-Sriracha" >to Oasis</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="./pictures/carousel2.jpg" alt="Chicago" width="1920" height="500" class="img-fluid">
                 <div style="padding-bottom: 10%;padding-left: 40%; text-align: left; color: black;" class="carousel-caption ">
-                    <h4 class="" data-aos="flip-left">cactus</h4>
+                    <h4 class="">cactus</h4>
                     <p class="font-Sriracha " data-aos="flip-left">The original pot would probably be too small. Probably need time to change new pots
                         You think it must be very difficult, right?</p>
                 </div>
@@ -52,29 +52,29 @@
         </div> -->
         </div><!-- </div><div class="carousel-inner"> -->
         <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <a class="carousel-control-prev" href="#demo">
             <span class="carousel-control-prev-icon"></span>
         </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
+        <a class="carousel-control-next" href="#demo">
             <span class="carousel-control-next-icon"></span>
         </a>
     </div>
     <!-- ===================================================container==================================================== -->
     <div class="container mt-5">
         <div class="row mb-3">
-            <div class="col-lg-4 col-12 mb-3 " data-aos="flip-left">
+            <div class="col-lg-4 col-12 mb-3 ">
                 <img src="./pictures/Untitled-5.png" alt="" class="img-fluid">
                 <div class="caption">
                     <h4 class="font-Dancing-Script">Easy care</h4>
                 </div>
             </div>
-            <div class="col-lg-4 col-12 mb-3" data-aos="flip-left">
+            <div class="col-lg-4 col-12 mb-3">
                 <img src="./pictures/Untitled-5.png" alt="" class="img-fluid">
                 <div class="caption">
                     <h4 class="font-Dancing-Script">little space</h4>
                 </div>
             </div>
-            <div class="col-lg-4 col-12 mb-3" data-aos="flip-left">
+            <div class="col-lg-4 col-12 mb-3">
                 <img src="./pictures/Untitled-5.png" alt="" class="img-fluid">
                 <div class="caption">
                     <h4 class="font-Dancing-Script">Inexpensive</h4>
@@ -85,7 +85,7 @@
     <!-- subContainer====================================================================================================== -->
     <section class="test">
         <div class="container">
-            <div class="row" data-aos="fade-up">
+            <div class="row">
                 <div class="col-lg-4 col-sm-3 col-12">
                     <video width="400" height="400" autoplay muted loop>
                         <source src="./pictures/vdo/Pinterest.mp4" type="video/mp4">
@@ -313,7 +313,7 @@
       </svg>
     </button> -->
     <section class="container-fluid">
-        <div class="row " data-aos="fade-left">
+        <div class="row ">
             <div class="col-12">
                 <h1 class="text-center py-3"></h1>
                 <div class="row ultraway">
