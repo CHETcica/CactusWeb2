@@ -4,13 +4,14 @@
     $multiple_id=implode(",",$id);//แปลงไอดีเป็นสตริง
     var_dump($multiple_id); //เช็คสถานะ
 
-    require ('../connect.php');
+    require "../connect.php";
     $sql="DELETE FROM basket WHERE BasketID IN ($multiple_id)";
-    $result= mysqli_query($connect,$sql);
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
 
-    if($result){
+    if($stmt){
         header("location:../basket.php.php");
-        exit(0);
+        
     } 
     else{
         echo "Error";

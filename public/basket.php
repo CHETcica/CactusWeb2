@@ -106,9 +106,11 @@
     <?php
       }
     ?> 
+    <input type="submit" value="ลบข้อมูล" class="btn btn-danger">
+
     </form>
     <button button id="selectAll" type="button" class="btn btn-primary">select all</button>
-    <button button id="selectAllcancel" type="button" class="btn btn-danger">cancel</button>
+    <button button id="selectAllcancel" type="button" class="btn btn-secondary">cancel</button>
 
 
 
@@ -119,12 +121,12 @@
       <div class="card bg-w" style="width: 110%;">
         <div class="card-body">
           
-          <h5 class="card-title">conclude</h5>
+          <h5 class="card-title"></h5>
           <p class="card-text">Total (amount)<span class="Totalamount"  id="Totalamount">--</span></p>
-          <p class="card-text">Shipping cost<span class="Totalamount"  id="">--</span></p>
+          <p class="card-text"><span class="Totalamount"  id=""></span></p>
           
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Discount code" aria-label="Search">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Discount code" aria-label="Search"> -->
             
           </form>
           <a href="./order.html" class="btn btn-primary btn-bottom">Payment</a>
