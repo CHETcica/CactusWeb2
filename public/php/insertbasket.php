@@ -36,8 +36,7 @@
        
         $sql = "UPDATE `basket` SET `Amout`='$CactusAmount',`Sumprice`='$Sum' WHERE `BasketID`= $basketId";
         $stmt1 = $conn->prepare($sql);
-        // var_dump($Sum);
-        // var_dump($CactusAmount);
+        
         echo "<br>";
 
         $stmt1->bindParam(':Amount',$CactusAmount);
@@ -80,7 +79,7 @@
         if ($stmt->execute()):
             $message = 'yes';
             header("location:../basket.php");
-            exit(0);
+            
         else:
             $message='Error';
    

@@ -13,6 +13,7 @@
         FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `uid`=1";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
+        $totalprice = 0;
     ?>
 
 <section class="container mb-3">
@@ -95,6 +96,7 @@
           <p id="total">
               <?php
                   echo $row['Sumprice'];
+                  
               ?>
           </p>
       </div>
@@ -104,9 +106,10 @@
 
 
     <?php
+      $totalprice += $row['Sumprice'];
       }
     ?> 
-    <input type="submit" value="ลบข้อมูล" class="btn btn-danger">
+    <input type="submit" value="Delete" class="btn btn-danger">
 
     </form>
     <button button id="selectAll" type="button" class="btn btn-primary">select all</button>
@@ -122,14 +125,14 @@
         <div class="card-body">
           
           <h5 class="card-title"></h5>
-          <p class="card-text">Total (amount)<span class="Totalamount"  id="Totalamount">--</span></p>
+          <p class="card-text">Total (price)<span class="Totalamount"  id="Totalamount"><?php echo $totalprice ;?>฿</span></p>
           <p class="card-text"><span class="Totalamount"  id=""></span></p>
           
           <form class="form-inline my-2 my-lg-0">
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Discount code" aria-label="Search"> -->
             
           </form>
-          <a href="./order.html" class="btn btn-primary btn-bottom">Payment</a>
+          <a href="./php/insertorder.php" class="btn btn-primary btn-bottom">Payment</a>
         </div>
       </div>
       
