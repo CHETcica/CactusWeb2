@@ -18,7 +18,7 @@
     $stmt_1 = $conn->prepare($sql_1);
     
     if($stmt_1->execute()){
-        header("location:../order.html");
+        header("location:../payment.php");
         echo "yes";
     }
     else{

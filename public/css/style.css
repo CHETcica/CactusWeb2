@@ -617,3 +617,8 @@ a{
     width: 265.75px;
     overflow: hidden;
   }
+  .Order-header{
+    background-color: white;
+    height: 20px;
+    width:50px;
+  }
