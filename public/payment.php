@@ -30,7 +30,8 @@
     <?php
     include "./component/navbar.php";
     require('connect.php');
-    $sql = "SELECT * FROM `order` WHERE `statusorder`= 'no'";
+    $uid = $_SESSION['user_login'];
+    $sql = "SELECT * FROM `order` WHERE `statusorder`= 'no' AND `uid` = $uid";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -203,8 +204,9 @@
                         <img src="./pictures/credit.png" alt="">
                       </label>
                     </div>
-                    
-                    <a class="btn btn-secondary btn-bottom" href="#" >Cancel</a>
+
+                    <a class="btn btn-secondary btn-secondary-cancel-payment" href="./php/Cancelorder.php?orderid=<?php  echo $row['orderid'];?>" >Cancel</a>
+ 
                     <button type="button" class="btn btn-primary btn-bottom ml-3" data-toggle="modal" data-target="#Payment_completed1">
                       submit
                     </button>

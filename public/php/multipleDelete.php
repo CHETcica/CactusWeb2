@@ -10,7 +10,7 @@
     $stmt->execute();
 
     if($stmt){
-        header("location:../basket.php.php");
+        header("location:../basket.php");
         
     } 
     else{

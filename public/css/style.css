@@ -622,3 +622,8 @@ a{
     height: 20px;
     width:50px;
   }
+  .btn-secondary-cancel-payment{
+    width: 20%;
+    position: absolute;
+    bottom: 15px;
+  }
