@@ -4,7 +4,7 @@
     require ('connect.php');
     //$sql = "SELECT * FROM user WHERE uid = $userid" ;
     $sql = "SELECT * FROM `user` INNER JOIN phone INNER JOIN address 
-    WHERE user.uid = phone.uid AND user.uid = address.uid" ;
+    WHERE user.uid = phone.uid AND user.uid = address.uid AND $userid" ;
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);

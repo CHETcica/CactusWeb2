@@ -75,7 +75,7 @@
         $stmt->bindParam(':Cac_id',$Cac_id);
     
         
-        $StatusBK='0';
+        
         if ($stmt->execute()):
             $message = 'yes';
             header("location:../basket.php");

@@ -246,14 +246,14 @@
 
           event.preventDefault();
 
-        let CactusAmount = document.getElementById("CactusAmount");
+          let CactusAmount = document.getElementById("CactusAmount");
           //5
-        let linkVal = link.getAttribute('href');
-        //localhost/avice/?name=cpu&num=
-        linkVal += CactusAmount.value
-        //localhost/avice/?name=cpu&num=5                  
-        window.open(linkVal, '_self');   
-        //<a href="localhost/avice/?name=cpu&num=5"></a> 
+          let linkVal = link.getAttribute('href');
+          //localhost/avice/?name=cpu&num=
+          linkVal += CactusAmount.value
+          //localhost/avice/?name=cpu&num=5                  
+          window.open(linkVal, '_self');   
+          //<a href="localhost/avice/?name=cpu&num=5"></a> 
       }
 
     </script>

@@ -7,10 +7,12 @@ include "./component/head.php";
 <body>
   <!---flude========================================container-fluid================================================== -->
   <?php
+  session_start();
   include "./component/navbar.php";
   require('connect.php');
+  $uid = $_SESSION['user_login'];
   $sql = "SELECT `BasketID`, `Amout`,`Cac_img`,`Cac_name`,`Cac_Price`, `Sumprice`, `StatusBK`, `uid`, product.Cac_img 
-        FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `uid`=1";
+        FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `uid`=$uid";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $totalprice = 0;

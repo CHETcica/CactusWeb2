@@ -1,7 +1,10 @@
 <?php
   session_start();
   
-  $_SESSION['user_login'] ='1';
+  $_SESSION['user_login'];
+   if (empty($_SESSION['user_login'])){
+      header("location:login.php");
+    }
 ?> 
 
 

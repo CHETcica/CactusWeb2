@@ -3,7 +3,7 @@
     require ('../connect.php');
     $uid = $_SESSION['user_login'];
     //$sql = "SELECT * FROM `basket` WHERE `uid`= $uid";
-    $sql = "SELECT `BasketID`,SUM(`Sumprice`) as total, GROUP_CONCAT(`BasketID` SEPARATOR ',') as BasketID FROM `basket` WHERE `uid` = $uid";
+    $sql = "SELECT SUM(`Sumprice`) as total, GROUP_CONCAT(`BasketID` SEPARATOR ',') as BasketID FROM `basket` WHERE `uid` = $uid";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
