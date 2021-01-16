@@ -2,9 +2,9 @@
   session_start();
   
   $_SESSION['user_login'];
-   if (empty($_SESSION['user_login'])){
-      header("location:login.php");
-    }
+  //  if (empty($_SESSION['user_login'])){
+  //     header("location:login.php");
+  //   }
 ?> 
 
 
@@ -43,11 +43,11 @@
         
         <form class="form-inline my-2 my-lg-0">
           
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           
           <a class="px-2" href="#">
             <span class="oi oi-magnifying-glass"></span>
-          </a>
+          </a> -->
         </form> 
         <?php
           if(isset($_SESSION['user_login'])){
@@ -58,19 +58,24 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $img = $row['uimg'];
+            $ahref = "profile.php";
+            $ahrefCart = "basket.php";
+            $imgCart = "https://cdn.discordapp.com/attachments/792729018608648204/800031463919452250/Untitled-2.png";
+          }else{
+            $img = "https://cdn.discordapp.com/attachments/792729018608648204/800028552811511828/Untitled-1.png";
+            $ahref = "login.php";
+          }
         ?>
-            <a href="profile.php">
-              <img class="icon-img-profile-onnav" src="<?php echo $row['uimg']?>" alt="">
-            </a>
-        <?php
-            }else{
-        ?>
-            <a class="px-2 " href="./login.php">
+        <a class="mr-2" href="<?php echo $ahrefCart;?>">
+              <img class="icon-img-profile-onnav" src="<?php echo $imgCart;?>" alt="">
+        </a>
+        <a href="<?php echo $ahref;?>">
+              <img class="icon-img-profile-onnav" src="<?php echo $img;?>" alt="">
+        </a>
+        <!-- <a class="px-2 " href="./login.php">
               <span class="oi oi-person"></span>
-            </a>
-        <?php    
-           }
-        ?>
+        </a> -->
       </div>
     </nav>
 
