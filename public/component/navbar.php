@@ -65,9 +65,11 @@
           }else{
             $img = "https://cdn.discordapp.com/attachments/792729018608648204/800028552811511828/Untitled-1.png";
             $ahref = "login.php";
+            $ahrefCart = "#";
+            $imgCart = "https://cdn.discordapp.com/attachments/792729018608648204/800033909836218398/Untitled-3.png";
           }
         ?>
-        <a class="mr-2" href="<?php echo $ahrefCart;?>">
+        <a class="mr-2" href="<?php echo $ahrefCart;?>"disable>
               <img class="icon-img-profile-onnav" src="<?php echo $imgCart;?>" alt="">
         </a>
         <a href="<?php echo $ahref;?>">
