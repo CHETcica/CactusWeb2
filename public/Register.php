@@ -31,12 +31,34 @@ if (isset($_REQUEST['btn_register'])) {
         $errorMsg[] = "sorry email already exists";
       } else if (!isset($errorMsg)) {
         $new_password = password_hash($password, PASSWORD_DEFAULT);
-        $insert_stmt = $conn->prepare("INSERT INTO user (uname ,email, password) VALUES (:uname, :uemail, :upassword)");
-        if ($insert_stmt->execute(array(
+        $insert_stmt = $conn->prepare("INSERT INTO user (uname ,email,password,uimg) VALUES (:uname, :uemail, :upassword,:img_Profile)");
+        $randimg = rand(1,7);
+        if($randimg == '1'){
+          $imgprofile = "https://cdn.discordapp.com/attachments/792729018608648204/800269761069711370/profile1.jpg";
+        }
+        else if($randimg == '2'){
+          $imgprofile = "https://cdn.discordapp.com/attachments/792729018608648204/800269776999022612/profile2.jpg";
+        }
+        else if($randimg == '3'){
+          $imgprofile = "https://cdn.discordapp.com/attachments/792729018608648204/800269780011319326/profile3.jpg";
+        }
+        else if($randimg == '4'){
+          $imgprofile = "https://cdn.discordapp.com/attachments/792729018608648204/800269781693497404/profile4.jpg";
+        }
+        else if($randimg == '5'){
+          $imgprofile = "https://cdn.discordapp.com/attachments/792729018608648204/800269782833692672/profile5.jpg";
+        }
+        else if($randimg == '6'){
+          $imgprofile = "https://cdn.discordapp.com/attachments/792729018608648204/800269785073451018/profile6.jpg";
+        }
+        else if($randimg == '7'){
+          $imgprofile = "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg";
+        }
+        if($insert_stmt->execute(array(
           ':uname' => $username,
           ':uemail' => $email,
-          ':upassword' => $new_password
-          
+          ':upassword' => $new_password,
+          ':img_Profile' => $imgprofile
         ))) {
           $registerMsg = "Rrgister successfully... Please click on login account link";
         }

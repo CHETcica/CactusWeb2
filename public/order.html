@@ -95,7 +95,7 @@
 
         </div>
         <div class="row">
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-12 col-12">
                 <h2>
                   Adress Details
                 </h2>
@@ -103,12 +103,13 @@
                     <div class="form-row">
                       <div class="col pt-2">
                         <label for="inputEmail4">First name</label>
-                        <input type="text" class="form-control" placeholder="First name">
+                        <input type="text" class="form-control" placeholder="First_name">
                       </div>
                       <div class="col pt-2">
                         <label for="inputEmail4">Last name</label>
-                        <input type="text" class="form-control" placeholder="Last name">
+                        <input type="text" class="form-control" placeholder="Last_name">
                       </div>
+                      
                     </div>
                     <!-- <div class="form-row">
                         <div class="form-group col-md-6 pt-2">
@@ -126,27 +127,32 @@
                       </div> -->
                       <div class="form-row">
                         <div class="form-group col-md-6">
-                          <label for="inputCity">City</label>
-                          <input type="text" class="form-control" id="inputCity">
+                          <label for="inputhouse_no">house_no</label>
+                          <input type="text" class="form-control" id="house_no">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputprovince">province</label>
+                          <input type="text" class="form-control" id="province">
                         </div>
                         
                         <div class="form-group col-md-6">
-                          <label for="inputDistrict">District</label>
-                          <input type="text" class="form-control" id="inputDistrict">
+                          <label for="inputdistrict">district</label>
+                          <input type="text" class="form-control" id="district">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputsub-district">sub-district</label>
+                          <input type="text" class="form-control" id="sub-district">
                         </div>
                       </div>
                       <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="inputCity">City</label>
-                          <input type="text" class="form-control" id="inputCity">
-                        </div>
-                        <div class="form-group col-md-4">
+                        
+                        <!-- <div class="form-group col-md-4">
                           <label for="inputState">State</label>
                           <select id="inputState" class="form-control">
                             <option selected>Choose...</option>
                             <option>...</option>
                           </select>
-                        </div>
+                        </div> -->
                         <div class="form-group col-md-2">
                           <label for="inputZip">Zip</label>
                           <input type="text" class="form-control" id="inputZip">
@@ -163,234 +169,7 @@
                      
                   </form>
             </div>
-            <div class="col-lg-6 col-12">
-                <h2>
-                    Your Order
-                </h2>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <h6>Suptotal</h6>
-                    </div>
-                    <div class="col ">
-                        <h6 class="text-align-right pr-2">--฿</h6>
-                    </div>
-                </div>    
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        <h6>Shipping</h6>
-                    </div>
-                    <div class="col ">
-                        <h6 class="text-align-right pr-2">35฿</h6>
-                    </div>
-                </div>
-                <hr>
-                <div class="card">
-
-                    <!-- <div class="form-check form-check-bank"data-toggle="modal" data-target="#bank">
-                      <input class="form-check-input" type="radio" name="pay" id="exampleRadios1" value="option1" checked>
-                      <label class="form-check-label" for="exampleRadios1">
-                        Use Mobilebanking
-                      </label>
-                    </div>
-                    
-                      <div class="modal fade modal-dialog fluid" id="bank" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Select you bank</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body ">
-                            
-                            <div class="form-check ">
-                              <input class="form-check-input " type="radio" name="bank" data-dismiss="modal" id="exampleRadios3" value="option1" checked>
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/Krungthai.png" alt="">
-                                  <div  class="caption-bank">
-                                    <h5 >Krung Thai</h5>
-                                  </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option2">
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/kasikorn.png" alt="">
-                                <div class="caption-bank">
-                                  <h5 >KasikornBank</h5>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option3" >
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/Krungsre.png" alt="">
-                                <div  class="caption-bank">
-                                  <h5 >Bank of Ayudhaya</h5>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option4">
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/./aomsin.png" alt="">
-                                <div  class="caption-bank">
-                                  <h5 >Government Saving Bank</h5>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option5" >
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/./bangkok.png" alt="">
-                                <div  class="caption-bank">
-                                  <h5 >Bangkok Bank</h5>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option6">
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/./thaipanich.png" alt="">
-                                <div  class="caption-bank">
-                                  <h5 >Siam Commercial </h5>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option7" >
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/./thanachart.png" alt="">
-                                <div  class="caption-bank">
-                                  <h5 >Thanachart Bank</h5>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank" id="exampleRadios3" value="option8">
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/./promtpay.png" alt="">
-                                <div  class="caption-bank">
-                                  <h5 >PromptPay</h5>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="bank"   id="exampleRadios3" value="option9" >
-                              <label class="form-check-label form-check-label-bank" for="exampleRadios2">
-                                <img class="icon-bank" src="./pictures/icon/./Wallet.png" alt="">
-                                <div  class="caption-bank">
-                                  <h5 >TrueMoneyWallet</h5>
-                                </div>
-                              </label>
-                            </div>
-
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-                          </div>
-                        </div>
-                      </div>
-                      </div> -->
-                    <div class="form-check form-check-bank"data-toggle="modal" data-target="#Slibe">
-                      <input class="form-check-input" type="radio" name="pay" id="exampleRadios1" value="option1" checked>
-                      <label class="form-check-label" for="exampleRadios1">
-                        Use Mobilebanking
-
-                      </label>
-                    </div>
-                      <!-- Vertically centered scrollable modal -->
-                      <div class="modal" id="Slibe" tabindex="-1">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title">Attach a receipt</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-
-                              <input type="file">
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Payment_completed">
-                                Save changes
-                              </button>
-                              
-
-                                <!-- horizontal centered scrollable modal -->
-                                  <div class="modal" id="Payment_completed" tabindex="-1">
-                                    <div class="modal-dialog">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title">Payment completed</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          <img style="width: auto; height: 450px;" src="./pictures/./FAVPNG_check-mark-transparency_448se54Q.png" alt="">
-                                          
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          <button type="button" class="btn btn-primary"><a href="./Transport.html">Go to Transportation</a></button>
-                                        </div>
-                                      </div>
-                                    </div> 
-                                  </div>
-                            </div>
-                          </div>
-                        </div> 
-                      </div>
-                    
-                      <div class="form-check form-check-bank">
-                        <input class="form-check-input" type="radio" name="pay" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios1">
-                          Payment on destination
-                        </label>
-                      </div>    
-                    <div class="form-check form-check-bank">
-                      <input class="form-check-input" type="radio" name="pay" id="exampleRadios2" value="option2">
-                      <label class="form-check-label" for="exampleRadios1">
-                        Pay by credit card
-                        <img src="./pictures/credit.png" alt="">
-                      </label>
-                    </div>
-                    
-                    
-                    <button type="button" class="btn btn-primary btn-bottom ml-3" data-toggle="modal" data-target="#Payment_completed1">
-                      submit
-                    </button>
-                    <!-- horizontal centered scrollable modal -->
-                    <div class="modal" id="Payment_completed1" tabindex="-1">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title">Payment completed</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <img style="width: auto; height: 450px;" src="./pictures/./FAVPNG_check-mark-transparency_448se54Q.png" alt="">
-                            
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary"><a href="./Transport.html">Go to Transportation</a></button>
-                          </div>
-                        </div>
-                      </div> 
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>   
     <footer class="footer mt-3">
