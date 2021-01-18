@@ -113,7 +113,11 @@ include "./component/head.php";
           $totalprice += $row['Sumprice'];
         }
         ?>
-        <input type="submit" value="Delete" class="btn btn-danger">
+        
+        
+
+
+        
 
         </form>
         <button button id="selectAll" type="button" class="btn btn-primary">select all</button>

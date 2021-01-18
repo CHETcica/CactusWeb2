@@ -27,11 +27,53 @@
 </head>
 <body>
     <?php
-    session_start();
+        session_start();
         require "./component/navbar.php";
         require "./connect.php";
         $userid = $_SESSION['user_login'];
-        $sql ="SELECT * FROM `address` WHERE `uid`= '3'";
+        
+        if($_POST){
+            $First_name = $_POST['First_name'];
+            $Last_name = $_POST['Last_name'];
+            $house_no = $_POST['house_no'];
+            $province = $_POST['province'];
+            $district = $_POST['district'];
+            $subdistrict = $_POST['subdistrict'];
+            $Postal_code = $_POST['Postal_code'];
+            
+
+            $sqlu ="UPDATE `user` SET `First_name` = '$First_name',`Last_name` = '$Last_name' WHERE '$userid'";//อัพเดท ชื่อนามสกุล
+            $stmtu = $conn->prepare($sqlu);
+            $stmtu->execute();  
+
+            $sqlua = " UPDATE `address` SET
+            `province`= '$province',
+            `district`='$district',
+            `subdistrict`= '$subdistrict',
+            `house_no`= '$house_no',
+            `Postal_code`= '$Postal_code'
+            WHERE uid = $userid";  
+                                                                                    //อัพเดทที่อยู่ 'uid' = '1'
+            $stmtua = $conn->prepare($sqlua);
+            
+            if($stmtua->execute()){
+                echo "yes";
+            } 
+        }
+
+        $sql ="SELECT * FROM `user` WHERE `uid`= '$userid'";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $rowuser = $stmt->fetch(PDO::FETCH_ASSOC);
+        if(!empty($rowuser)){
+            $disabled = "disabled";
+        }else{
+            $disable = " ";
+        }
+
+
+        
+        $sql ="SELECT * FROM `address` WHERE `uid`= '$userid'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -46,15 +88,16 @@
                 <h2>
                   Adress Details
                 </h2>
-                <form>
+                
+                <form action="" method="POST">
                     <div class="form-row">
                       <div class="col pt-2">
                         <label for="inputEmail4">First name</label>
-                        <input type="text" class="form-control"  placeholder="First_name">
+                        <input <?php echo $disabled;?> type="text" name="First_name" class="form-control" value="<?php echo $rowuser['First_name'];?>">
                       </div>
                       <div class="col pt-2">
                         <label for="inputEmail4">Last name</label>
-                        <input type="text" class="form-control" placeholder="Last_name">
+                        <input <?php echo $disabled;?> type="text" name="Last_name" class="form-control" value="<?php echo $rowuser['Last_name'];?>" >
                       </div>
                       
                     </div>
@@ -62,20 +105,20 @@
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="inputhouse_no">house_no</label>
-                          <input type="text" class="form-control" value="<?php echo $row['house_no'];?>">
+                          <input type="text" class="form-control" name="house_no" value="<?php echo $row['house_no'];?>">
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputprovince">province</label>
-                          <input type="text" class="form-control" value="<?php echo $row['province'];?>">
+                          <input type="text" class="form-control" name="province" value="<?php echo $row['province'];?>">
                         </div>
                         
                         <div class="form-group col-md-6">
                           <label for="inputdistrict">district</label>
-                          <input type="text" class="form-control" value="<?php echo $row['district'];?>">
+                          <input type="text" class="form-control" name="district" value="<?php echo $row['district'];?>">
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputsub-district">sub-district</label>
-                          <input type="text" class="form-control" value="<?php echo $row['sub-district'];?>">
+                          <input type="text" class="form-control" name="subdistrict" value="<?php echo $row['subdistrict'];?>">
                         </div>
                       </div>
                       <div class="form-row">
@@ -89,19 +132,23 @@
                         </div> -->
                         <div class="form-group col-md-2">
                           <label for="inputZip">Zip</label>
-                          <input type="text" class="form-control" id="inputZip">
+                          <input type="text" class="form-control"name="Postal_code" value="<?php echo $row['Postal_code'];?>">
                         </div>
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox" id="gridCheck">
                           <label class="form-check-label" for="gridCheck">
                             Check me out
                           </label>
                         </div>
-                      </div>
-                     
-                  </form>
+                      </div> -->
+                      <a href="./basket.php">
+                        <button type="Cancel" class="btn btn-secondary">Cancel</button>
+                      </a>
+                      
+                      <button type="submit" class="btn btn-primary">Save</button>
+                </form>
             </div>
             
         </div>

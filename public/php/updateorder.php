@@ -6,7 +6,7 @@
     
 
     if($stmt->execute()){
-        header("location:../payment.php");
+        header("location:../manageaddress.php");
 
     }
 
