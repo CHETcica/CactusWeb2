@@ -57,18 +57,23 @@
             $stmtua = $conn->prepare($sqlua);
             
             if($stmtua->execute()){
-                echo "yes";
+                
             } 
         }
 
-        $sql ="SELECT * FROM `user` WHERE `uid`= '$userid'";
+        $sql ="SELECT First_name,Last_name FROM `user` WHERE `uid`= '$userid'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $rowuser = $stmt->fetch(PDO::FETCH_ASSOC);
-        if(!empty($rowuser)){
+
+        $fname =  $rowuser['First_name'];
+        //$rowuser['Last_name'];
+        if(!empty($fname)){
+            
             $disabled = "disabled";
         }else{
-            $disable = " ";
+            var_dump($rowuser['First_name']);
+            $disabled = "disable";
         }
 
 
@@ -93,11 +98,11 @@
                     <div class="form-row">
                       <div class="col pt-2">
                         <label for="inputEmail4">First name</label>
-                        <input <?php echo $disabled;?> type="text" name="First_name" class="form-control" value="<?php echo $rowuser['First_name'];?>">
+                        <input <?php echo $disabled;?>  name="First_name" class="form-control" value="<?php echo $rowuser['First_name'];?>">
                       </div>
                       <div class="col pt-2">
                         <label for="inputEmail4">Last name</label>
-                        <input <?php echo $disabled;?> type="text" name="Last_name" class="form-control" value="<?php echo $rowuser['Last_name'];?>" >
+                        <input <?php echo $disabled;?>  name="Last_name" class="form-control" value="<?php echo $rowuser['Last_name'];?>" >
                       </div>
                       
                     </div>
