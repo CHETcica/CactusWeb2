@@ -84,6 +84,7 @@
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    echo 0;
                     echo $row['phonenumber']; 
                   ?>
                 </div>
