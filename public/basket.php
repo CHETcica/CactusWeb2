@@ -12,7 +12,7 @@ include "./component/head.php";
   require('connect.php');
   $uid = $_SESSION['user_login'];
   $sql = "SELECT `BasketID`, `Amout`,`Cac_img`,`Cac_name`,`Cac_Price`, `Sumprice`, `StatusBK`, `uid`, product.Cac_img 
-        FROM `basket` INNER JOIN product WHERE product.Cac_id=basket.Cac_id and `uid`=$uid";
+        FROM `basket` INNER JOIN product WHERE product.Cac_id = basket.Cac_id and `uid` = $uid AND StatusBK = 'no'";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $totalprice = 0;
