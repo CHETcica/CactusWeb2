@@ -66,7 +66,7 @@
                             Product
                         </th>
                         <th>
-                            Price
+                            Address
                         </th>
                     </tr>
                     </thead>
@@ -109,7 +109,17 @@
                                   ?>
                                 </td>
                                 <td>
-                                  <?php  ?>
+                                  <?php  
+                                    $sql_4 ="SELECT * FROM `address` WHERE `uid`= '$userid'";
+                                    $stmt_4 = $conn->prepare($sql_4);
+                                    $stmt_4->execute();
+                                    $row_4 = $stmt_4->fetch(PDO::FETCH_ASSOC);
+                                    echo $row_4['house_no'];
+                                    echo $row_4['subdistrict'];
+                                    echo $row_4['district'];
+                                    echo $row_4['province'];
+                                    echo $row_4['Postal_code'];
+                                  ?>
                                 </td>
                         </tr>  
                         
