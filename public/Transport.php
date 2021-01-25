@@ -1,31 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-        include "./component/head.php";
-?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- update the version number as needed -->
+
+    <script defer src="/__/firebase/7.17.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+  
+    <script defer src="/__/firebase/7.17.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.17.1/firebase-storage.js"></script>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w=="crossorigin="anonymous" />
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Dancing+Script:wght@600&display=swap"rel="stylesheet">
+  
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./css/style.css"> 
+
+</head>
 <body>
     <!---flude========================================container-fluid================================================== -->
     <?php
+        
+        
         include "./component/navbar.php";
+        $uid = $_SESSION['user_login'];
+        require('connect.php');
+        
+        $sql = "SELECT * FROM `order` WHERE `uid`= $uid";
+        $stmt = $conn->prepare($sql);
+        
+        $stmt->execute();
+        $list = 1;
+          
+        
+        
+        
+
     ?>
-    <div class="container  containerX mt-10">
-      <div class="row">
-          <div class="col-lg-2"><h4>id</h4></div>
-          <div class="col-lg-3"><h4>code</h4></div>
-          <div class="col-lg-3"><h4>date</h4></div>
-          <div class="col-lg-3"><h4>detail</h4></div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-lg-2 ">0001</div>
-        <div class="col-lg-3 ">JSDIRFDE5DS-5F65E4F7ES5F4E</div>
-        <div class="col-lg-3 ">21-10-2020</div>
-        <div class="col-lg-3 ">Astrophytum asterias</div>
 
-        </div>
-      </div>
+        <div class="container ">
+            <div>
+                <h1>
+                    Transport
+                </h1>
+            </div>
+            <div class="card my-5" style="height: 100%;">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th > 
+                            List
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Product
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                    </tr>
+                    </thead>
+                    
+                    <tbody>
+                    <?php
+                     
+                      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                      
+                    ?>
+                        
+                        <tr>
+                                <th>
+                                   <?php 
+                                    //echo $list;
+                                    echo $row['orderid'];
+                                   ?>   
+                                </th>
+                                <td>
+                                    <?php echo $row['datetime'];?>
+                                </td>
+                                <td>
+                                  <?php  
+                                   $multiBid = $row['BasketID'];
+                                   
+                                   $sql_2 = "SELECT * FROM `basket` WHERE BasketID in ($multiBid)";
+                                   $stmt_2 = $conn->prepare($sql_2);
+                                   $stmt_2->execute();
+                                    while($row_2 = $stmt_2->fetch(PDO::FETCH_ASSOC)){
+                                        $cactusid = $row_2['Cac_id'];
+                                        $sql_3 = "SELECT * FROM `product` WHERE Cac_id = $cactusid";
+                                        $stmt_3 = $conn->prepare($sql_3);
+                                        $stmt_3->execute();
+                                        $row_3 = $stmt_3->fetch(PDO::FETCH_ASSOC);
+                                            echo $row_3['Cac_name']; 
+                                        
+                                   }                 
 
-    </div>   
+                                   
+                                  ?>
+                                </td>
+                                <td>
+                                  <?php  ?>
+                                </td>
+                        </tr>  
+                        
+                        
+                    <?php
+                        $list += 1;
+                    }
+                    ?>
+                    </tbody> 
+                </table>
+            </div>
+
+        </div>   
     <!-- =====================================================   footer  ===================================================== -->
     <?php
         include "./component/footer.php";

@@ -2,7 +2,6 @@
     session_start();
     $orderid = $_GET['orderid'];
     require ('../connect.php');
-
     $uid = $_SESSION['user_login'];
     $sql = "SELECT * FROM `order` WHERE orderid = $orderid AND `uid` = $uid";
     $stmt = $conn->prepare($sql);

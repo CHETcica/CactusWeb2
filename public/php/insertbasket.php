@@ -66,7 +66,7 @@
      }else if(empty($row1["BasketID"])){
         
         $sql="INSERT INTO `basket`(BasketID,Amout, Sumprice, StatusBK,`uid`,Cac_id) 
-                            VALUES (' ', :Amount, :Sumprice, '0', :CusID, :Cac_id);";
+                            VALUES (' ', :Amount, :Sumprice, 'no', :CusID, :Cac_id);";
         $stmt = $conn->prepare($sql);
     
         $stmt->bindParam(':Amount',$CactusAmount);

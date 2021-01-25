@@ -13,8 +13,8 @@
     var_dump($BasketID);
     var_dump($uid);
 
-    $sql_1 = "INSERT INTO `order`(`statusorder`, `BasketID`, `uid`, `totalprice`) 
-                            VALUES('no','$BasketID',$uid,$totalprice)";
+    $sql_1 = "INSERT INTO `order`(`statusorder`, `BasketID`,`datetime`, `uid`, `totalprice`) 
+                            VALUES('no','$BasketID','',$uid,$totalprice)";
     $stmt_1 = $conn->prepare($sql_1);
     
     if($stmt_1->execute()){

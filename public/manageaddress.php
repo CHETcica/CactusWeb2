@@ -42,7 +42,7 @@
             $Postal_code = $_POST['Postal_code'];
             
 
-            $sqlu ="UPDATE `user` SET `First_name` = '$First_name',`Last_name` = '$Last_name' WHERE '$userid'";//อัพเดท ชื่อนามสกุล
+            $sqlu ="UPDATE `user` SET `First_name` = '$First_name',`Last_name` = '$Last_name' WHERE 'uid' ='$userid'";//อัพเดท ชื่อนามสกุล
             $stmtu = $conn->prepare($sqlu);
             $stmtu->execute();  
 
@@ -57,7 +57,7 @@
             $stmtua = $conn->prepare($sqlua);
             
             if($stmtua->execute()){
-                
+              //header("location:./Transport.php");
             } 
         }
 
@@ -93,7 +93,8 @@
                 <h2>
                   Adress Details
                 </h2>
-                
+
+              <div class="container  containerX my-10">
                 <form action="" method="POST">
                     <div class="form-row">
                       <div class="col pt-2">
@@ -154,6 +155,12 @@
                       
                       <button type="submit" class="btn btn-primary">Save</button>
                 </form>
+              </div>
+
+                
+
+
+                <a href="./Transport.php" class="btn btn-primary my-2">Save and go to Transport</a>
             </div>
             
         </div>

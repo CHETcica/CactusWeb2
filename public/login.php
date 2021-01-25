@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 require_once('connect.php');
 
-session_start();
+
 
 
 // if (isset($_SESSION['user_login'])) {

@@ -12,9 +12,8 @@
           <p>contact us</p>
           <p>shippin policy</p>
           <p>privacy policy</p>
-          
         </div>
-        <div class="col-lg col-12 ">
+        <div class="col-lg col-12">
           <h2 class="font-Dancing-Script">Follow</h2>
           <div>
             <p>© 2019 Oasis-cactus</p>
