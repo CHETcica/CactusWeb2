@@ -111,20 +111,56 @@
                       <div class="form-row">
                         <div class="form-group col-md-6">
                           <label for="inputhouse_no">house_no</label>
-                          <input type="text" class="form-control" name="house_no" value="<?php echo $row['house_no'];?>">
+                          <input type="text" class="form-control" name="house_no" value="
+                            <?php
+                              if($row){
+                                echo $row['house_no'];  
+                              } 
+                              else{
+                                echo "";
+                              }  
+                            ?>
+                          ">
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputprovince">province</label>
-                          <input type="text" class="form-control" name="province" value="<?php echo $row['province'];?>">
+                          <input type="text" class="form-control" name="province" value="
+                          <?php
+                            if($row){
+                              echo $row['province'];  
+                            } 
+                            else{
+                              echo "";
+                            }  
+                            
+                          ?>">
                         </div>
                         
                         <div class="form-group col-md-6">
                           <label for="inputdistrict">district</label>
-                          <input type="text" class="form-control" name="district" value="<?php echo $row['district'];?>">
+                          <input type="text" class="form-control" name="district" value="
+                          <?php 
+                            if($row){
+                              echo $row['district'];
+                            } 
+                            else{
+                              echo "";
+                            } 
+                            
+                          ?>">
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputsub-district">sub-district</label>
-                          <input type="text" class="form-control" name="subdistrict" value="<?php echo $row['subdistrict'];?>">
+                          <input type="text" class="form-control" name="subdistrict" value="
+                          <?php 
+                            if($row){
+                              echo $row['subdistrict'];
+                            } 
+                            else{
+                              echo "";
+                            }
+                            
+                          ?>">
                         </div>
                       </div>
                       <div class="form-row">
@@ -138,7 +174,16 @@
                         </div> -->
                         <div class="form-group col-md-2">
                           <label for="inputZip">Zip</label>
-                          <input type="text" class="form-control"name="Postal_code" value="<?php echo $row['Postal_code'];?>">
+                          <input type="text" class="form-control"name="Postal_code" value="
+                          <?php
+                            if($row){
+                              echo $row['Postal_code'];
+                            } 
+                            else{
+                              echo "";
+                            } 
+                            
+                            ?>">
                         </div>
                       </div>
                       <!-- <div class="form-group">

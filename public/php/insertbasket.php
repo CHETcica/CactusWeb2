@@ -34,11 +34,9 @@
         
         echo "updete";
        
-        $sql = "UPDATE `basket` SET `Amout`='$CactusAmount',`Sumprice`='$Sum' WHERE `BasketID`= $basketId";
+        $sql = "UPDATE `basket` SET `Amout`='$CactusAmount',`StatusBK`='no',`Sumprice`='$Sum' WHERE `BasketID`= $basketId";
         $stmt1 = $conn->prepare($sql);
-        
         echo "<br>";
-
         $stmt1->bindParam(':Amount',$CactusAmount);
         $stmt1->bindParam(':Sumprice',$Sum);
         $stmt1->bindParam(':CusID',$_GET["Customerid"]);
@@ -66,7 +64,7 @@
      }else if(empty($row1["BasketID"])){
         
         $sql="INSERT INTO `basket`(BasketID,Amout, Sumprice, StatusBK,`uid`,Cac_id) 
-                            VALUES (' ', :Amount, :Sumprice, 'no', :CusID, :Cac_id);";
+                            VALUES ('', :Amount, :Sumprice, 'no', :CusID, :Cac_id);";
         $stmt = $conn->prepare($sql);
     
         $stmt->bindParam(':Amount',$CactusAmount);

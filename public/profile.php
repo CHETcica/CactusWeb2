@@ -19,8 +19,6 @@
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
 ?>
 
 <head>
@@ -84,24 +82,36 @@
                     $stmt = $conn->prepare($sql);
                     $stmt->execute();
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    echo 0;
-                    echo $row['phonenumber']; 
+                    if($row){
+                      echo 0;
+                      echo $row['phonenumber']; 
+                    }
+                    else{
+                      echo "Nall";
+                    }
+                    
+
                   ?>
                 </div>
               </div>
               <div class="name_user">Address : 
                 <div class="name_user_fromtable">
-                  <?php 
-                    $sql ="SELECT * FROM `address` WHERE `uid`='$userid'"; 
-                    $stmt = $conn->prepare($sql);
-                    $stmt->execute();
-                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    echo $row['house_no']." ";
-                    echo $row['province']." ";
-                    echo $row['district']." ";
-                    echo $row['subdistrict']." "; 
-                  
-                  ?>
+                    <?php 
+                      $sql ="SELECT * FROM `address` WHERE `uid`='$userid'"; 
+                      $stmt = $conn->prepare($sql);
+                      $stmt->execute();
+                      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                      if($row){
+                        echo $row['house_no']." ";
+                        echo $row['province']." ";
+                        echo $row['district']." ";
+                        echo $row['subdistrict']." "; 
+                        echo $row['Postal_code']." "; 
+                      }
+                      else{
+                        echo "Nall";
+                      }
+                    ?>
                 </div>
               </div>
               <button type="button" class="btn btn-outline-success btn-group-profile">Edit</button>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2021 at 06:26 AM
+-- Generation Time: Jan 27, 2021 at 06:26 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -43,7 +43,7 @@ CREATE TABLE `address` (
 
 INSERT INTO `address` (`aid`, `uid`, `province`, `district`, `subdistrict`, `house_no`, `Postal_code`) VALUES
 (1, 1, 'sadasdas', 'sadsadas', 'dsadas', 'adasd', 74120),
-(2, 3, '...', 'sadsadas', 'dsadas', 'adasd', 74120);
+(2, 3, 'สมุทรสาคร', 'บ้านเเพ้ว', 'หนองสามห้อง', '42 หมู่ 3', 74120);
 
 -- --------------------------------------------------------
 
@@ -55,7 +55,7 @@ CREATE TABLE `basket` (
   `BasketID` int(3) NOT NULL,
   `Amout` int(10) NOT NULL,
   `Sumprice` int(10) NOT NULL,
-  `StatusBK` int(1) NOT NULL,
+  `StatusBK` varchar(3) NOT NULL,
   `uid` int(3) NOT NULL,
   `Cac_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -65,18 +65,23 @@ CREATE TABLE `basket` (
 --
 
 INSERT INTO `basket` (`BasketID`, `Amout`, `Sumprice`, `StatusBK`, `uid`, `Cac_id`) VALUES
-(12, 5, 500, 0, 1, 18),
-(13, 9, 900, 0, 1, 14),
-(14, 17, 2550, 0, 1, 12),
-(17, 8, 640, 0, 1, 2),
-(18, 1, 100, 0, 1, 8),
-(19, 1, 100, 0, 1, 1),
-(22, 9, 900, 0, 2, 1),
-(28, 10, 1000, 0, 4, 17),
-(29, 12, 1080, 0, 5, 3),
-(30, 7, 560, 0, 3, 2),
-(31, 1, 100, 0, 7, 6),
-(32, 103, 10300, 0, 3, 1);
+(12, 5, 500, 'no', 1, 18),
+(13, 9, 900, 'no', 1, 14),
+(14, 17, 2550, 'no', 1, 12),
+(17, 8, 640, 'no', 1, 2),
+(18, 1, 100, 'no', 1, 8),
+(19, 1, 100, 'no', 1, 1),
+(22, 9, 900, 'no', 2, 1),
+(28, 10, 1000, 'no', 4, 17),
+(29, 12, 1080, 'no', 5, 3),
+(30, 7, 560, 'yes', 3, 2),
+(31, 1, 100, 'no', 7, 6),
+(32, 8, 800, 'yes', 3, 1),
+(33, 25, 3000, 'yes', 3, 4),
+(34, 18, 1620, 'yes', 3, 3),
+(35, 25, 2500, 'yes', 8, 14),
+(36, 1, 90, 'yes', 8, 16),
+(37, 1, 120, 'yes', 3, 11);
 
 -- --------------------------------------------------------
 
@@ -88,6 +93,7 @@ CREATE TABLE `order` (
   `orderid` int(3) NOT NULL,
   `statusorder` varchar(10) NOT NULL,
   `BasketID` varchar(255) NOT NULL,
+  `datetime` datetime NOT NULL,
   `uid` int(3) NOT NULL,
   `totalprice` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -96,19 +102,27 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`orderid`, `statusorder`, `BasketID`, `uid`, `totalprice`) VALUES
-(13, 'yes', '6,7', 1, 7980),
-(20, 'yes', '6,12,13', 1, 4280),
-(21, 'yes', '6,12,13,14', 1, 6830),
-(24, 'yes', '6,12,13,14,15,16', 1, 10630),
-(25, 'yes', '12,13,14', 1, 3950),
-(30, 'yes', '22', 2, 900),
-(31, 'yes', '23,24', 3, 2800),
-(33, 'yes', '23,24,25,26', 3, 4940),
-(34, 'yes', '28', 4, 1000),
-(35, 'yes', '29', 5, 1080),
-(37, 'yes', '32,30', 3, 10860),
-(38, 'yes', '32,30', 3, 10860);
+INSERT INTO `order` (`orderid`, `statusorder`, `BasketID`, `datetime`, `uid`, `totalprice`) VALUES
+(13, 'yes', '6,7', '0000-00-00 00:00:00', 1, 7980),
+(20, 'yes', '6,12,13', '0000-00-00 00:00:00', 1, 4280),
+(21, 'yes', '6,12,13,14', '0000-00-00 00:00:00', 1, 6830),
+(24, 'yes', '6,12,13,14,15,16', '0000-00-00 00:00:00', 1, 10630),
+(25, 'yes', '12,13,14', '0000-00-00 00:00:00', 1, 3950),
+(30, 'yes', '22', '0000-00-00 00:00:00', 2, 900),
+(34, 'yes', '28', '0000-00-00 00:00:00', 4, 1000),
+(35, 'yes', '29', '0000-00-00 00:00:00', 5, 1080),
+(37, 'yes', '32,30', '0000-00-00 00:00:00', 3, 10860),
+(38, 'yes', '32,30', '2021-01-15 17:38:27', 3, 10860),
+(39, 'yes', '32,30', '0000-00-00 00:00:00', 3, 4160),
+(40, 'yes', '32,30', '2021-01-26 12:31:52', 3, 4160),
+(41, 'yes', '32,30,33', '2021-01-16 12:31:48', 3, 7160),
+(43, 'yes', '32,30,33', '2021-01-24 12:31:37', 3, 7160),
+(44, 'yes', '34', '2021-01-25 12:29:06', 3, 450),
+(45, 'yes', '35,36', '0000-00-00 00:00:00', 8, 2090),
+(46, 'no', '35,36', '0000-00-00 00:00:00', 8, 2090),
+(47, 'no', '35,36', '0000-00-00 00:00:00', 8, 2090),
+(48, 'no', '35,36', '0000-00-00 00:00:00', 8, 2590),
+(49, 'yes', '32,37', '0000-00-00 00:00:00', 3, 920);
 
 -- --------------------------------------------------------
 
@@ -199,7 +213,8 @@ INSERT INTO `user` (`uid`, `uname`, `email`, `password`, `uimg`, `First_name`, `
 (4, 'Aum', 'Aum@gmail.com', '$2y$10$SXfV84V.YpvxgrDm9J79peaOAdZ8RVQZSWTDnfCoWrQtdMjI3fHHK', '', 'เจษฎากร', 'เมืองนาม'),
 (5, 'Aum2', 'Aum2@gmail.com', '$2y$10$0kkqIaVFNTzoH142VFBoUuUcEJ/eGv8P4HAJkIEHpYCQmBJwXo8TC', '', 'เจษฎากร', 'เมืองนาม'),
 (6, 'chet', 'chetsadakorn2@gmail.com', '$2y$10$MkfvZUkBzEsy772k.SLnneOfuguSC7H4XASbeSG0CEHT4fiXvmOj2', 'https://cdn.discordapp.com/attachments/792729018608648204/800269781693497404/profile4.jpg', 'เจษฎากร', 'เมืองนาม'),
-(7, 'chet1', 'chetsadakorn1@gmail.com', '$2y$10$8QnnkJZ8RcDsytNgoM..lOviB337OTBFujD.9XSHpQcMLSloGMO62', 'https://cdn.discordapp.com/attachments/792729018608648204/800269776999022612/profile2.jpg', 'เจษฎากร', 'เมืองนาม');
+(7, 'chet1', 'chetsadakorn1@gmail.com', '$2y$10$8QnnkJZ8RcDsytNgoM..lOviB337OTBFujD.9XSHpQcMLSloGMO62', 'https://cdn.discordapp.com/attachments/792729018608648204/800269776999022612/profile2.jpg', 'เจษฎากร', 'เมืองนาม'),
+(8, '้้้hhh', 'chetsadakornhhh@gmail.com', '$2y$10$CFeFnbowxjM0bkQFnp7LM.jA21rzeITow03iuaKwHAk3fjlMQPgwG', 'https://cdn.discordapp.com/attachments/792729018608648204/800269785073451018/profile6.jpg', '', '');
 
 --
 -- Indexes for dumped tables
@@ -260,13 +275,13 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `basket`
 --
 ALTER TABLE `basket`
-  MODIFY `BasketID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `BasketID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `orderid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `orderid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -278,7 +293,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `uid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `uid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
