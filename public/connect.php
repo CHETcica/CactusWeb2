@@ -1,5 +1,5 @@
 
-    <?php
+<?php
     $serverName = "localhost";
     $dbName = "cactus";
     $userName = "root";
@@ -11,4 +11,4 @@
     } catch (PDOException $e) {
         echo "Sorry! You cannot connect to database";
     }
-    ?>
+?>
