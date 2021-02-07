@@ -114,7 +114,7 @@
                     ?>
                 </div>
               </div>
-              <button type="button" class="btn btn-outline-success btn-group-profile">Edit</button>
+              <a href="./editFormaddress.php" type="button" class="btn btn-outline-success btn-group-profile">Edit</a>
               <button type="button" class="btn btn-outline-danger btn-group-profile">Close</button>
               <a  class="btn btn-outline-warning btn-group-profile" href="./php/logout.php">
                  Logout

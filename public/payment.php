@@ -58,6 +58,7 @@
     </div>
     
     <section class="container pt-5">
+    <h1 class="profile-header">Payment</h1>
         <div class="row">
             <div class="col-lg-12 col-12">
                 <h2>
@@ -205,7 +206,7 @@
                       </label>
                     </div>
 
-                    <a class="btn btn-secondary btn-secondary-cancel-payment" href="./php/Cancelorder.php?orderid=<?php  echo $row['orderid'];?>" >Cancel</a>
+                    <a class="btn btn-secondary btn-secondary-cancel-payment ml-3" href="./php/Cancelorder.php?orderid=<?php  echo $row['orderid'];?>" >Cancel</a>
  
                     <button type="button" class="btn btn-primary btn-bottom ml-3" data-toggle="modal" data-target="#Payment_completed1">
                       submit

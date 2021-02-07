@@ -19,7 +19,8 @@ include "./component/head.php";
   ?>
 
   <section class="container mb-3">
-    
+  <h1 class="profile-header">Carts</h1>
+
     <div class="row">
       <div class="col-lg-9">
         <div class="row">
@@ -61,6 +62,7 @@ include "./component/head.php";
 
 
           <div class="">
+            
             <div class="row bg-w my-3">
               <div class="col-lg-1  ">
                 <div class="form-group form-check form-check-product-select">
