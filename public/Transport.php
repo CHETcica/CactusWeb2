@@ -20,32 +20,20 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Dancing+Script:wght@600&display=swap"rel="stylesheet">
-  
     <script src="./main.js"></script>
-    <link rel="stylesheet" href="./css/style.css"> 
-
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <!---flude========================================container-fluid================================================== -->
     <?php
-        
-        
         include "./component/navbar.php";
         $uid = $_SESSION['user_login'];
         require('connect.php');
-        
         $sql = "SELECT * FROM `order` WHERE `uid`= $uid";
         $stmt = $conn->prepare($sql);
-        
         $stmt->execute();
         $list = 1;
-          
-        
-        
-        
-
     ?>
-
         <div class="container ">
             <div>
                 <h1>
@@ -73,16 +61,14 @@
                     
                     <tbody>
                     <?php
-                     
                       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                      
                     ?>
                         
                         <tr>
                                 <th>
                                    <?php 
-                                    //echo $list;
-                                    echo $row['orderid'];
+                                    echo $list;
+                                    //echo $row['orderid'];
                                    ?>   
                                 </th>
                                 <td>

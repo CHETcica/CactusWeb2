@@ -2,6 +2,7 @@
   session_start();
   
   $_SESSION['user_login'];
+  
   //  if (empty($_SESSION['user_login'])){
   //     header("location:login.php");
   //   }
@@ -34,7 +35,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="./ourstory.html">our story</a>
               <a class="dropdown-item" href="./Ourstore.html">our store</a>
-              <a class="dropdown-item" href="./contactus.html">contact us</a>
+              <a class="dropdown-item" href="./contactus.php">contact us</a>
 
             </div>
           </li>
@@ -81,5 +82,5 @@
       </div>
     </nav>
 
-
+    
     

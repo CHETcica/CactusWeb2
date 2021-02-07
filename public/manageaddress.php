@@ -33,7 +33,7 @@
   require "./connect.php";
   $userid = $_SESSION['user_login'];
 
-  if ($_POST) {
+  if($_POST){
     $First_name = $_POST['First_name'];
     $Last_name = $_POST['Last_name'];
     $house_no = $_POST['house_no'];
@@ -61,7 +61,7 @@
     $stmtu = $conn->prepare($sqlu);
     $stmtu->execute();
 
-    $sqlua = " UPDATE `address` SET
+    $sqlua = "UPDATE `address` SET
             `province`= '$province',
             `district`='$district',
             `subdistrict`= '$subdistrict',
@@ -113,20 +113,16 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputhouse_no">house_no</label>
-                <input type="text" class="form-control" name="house_no" value="
-                            <?php
-                            if($row){
+                <input type="text" class="form-control" name="house_no" value="<?php if($row){
                               echo $row['house_no'];
                             }else {
-                              echo "";
+                               echo "null";
                             }
-                            ?>
-                          ">
+                            ?>">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputprovince">province</label>
-                <input type="text" class="form-control" name="province" value="
-                          <?php
+                <input type="text" class="form-control" name="province" value="<?php
                           if($row) {
                             echo $row['province'];
                           }else {
@@ -138,8 +134,7 @@
 
               <div class="form-group col-md-6">
                 <label for="inputdistrict">district</label>
-                <input type="text" class="form-control" name="district" value="
-                          <?php
+                <input type="text" class="form-control" name="district" value="<?php
                           if ($row) {
                             echo $row['district'];
                           } else {
@@ -150,8 +145,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputsub-district">sub-district</label>
-                <input type="text" class="form-control" name="subdistrict" value="
-                          <?php
+                <input type="text" class="form-control" name="subdistrict" value="<?php
                           if ($row) {
                             echo $row['subdistrict'];
                           } else {
@@ -172,8 +166,7 @@
                         </div> -->
               <div class="form-group col-md-2">
                 <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" name="Postal_code" value="
-                          <?php
+                <input type="text" class="form-control" name="Postal_code" value="<?php
                           if ($row) {
                             echo $row['Postal_code'];
                           } else {
