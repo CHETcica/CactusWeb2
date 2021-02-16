@@ -113,10 +113,11 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputhouse_no">house_no</label>
-                <input type="text" class="form-control" name="house_no" value="<?php if($row){
+                <input type="text" class="form-control" name="house_no" value="<?php 
+                            if($row){
                               echo $row['house_no'];
                             }else {
-                               echo "null";
+                               echo "";
                             }
                             ?>">
               </div>
