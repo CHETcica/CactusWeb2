@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- update the version number as needed -->
-
     <script defer src="/__/firebase/7.17.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-  
     <script defer src="/__/firebase/7.17.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
     <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
@@ -119,7 +117,7 @@
             </div>
 
         </div>   
-    <!-- =====================================================   footer  ===================================================== -->
+    <!-- =====================================================footer===================================================== -->
     <?php
         include "./component/footer.php";
     ?>

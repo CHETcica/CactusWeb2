@@ -23,7 +23,7 @@
     <div class="container my-2">
         <div class="row pt-5">
             <div class="col-12">
-                <h3 class="name font-Sriracha"><?php echo $row['Cac_Type'] ?></h3>
+                <h3 class="name font-Sriracha">Cactus Details</h3>
             </div>
         </div>
 

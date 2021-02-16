@@ -38,9 +38,25 @@
     <?php
         require "./component/navbar.php";
         require('connect.php');
-        $sql = "SELECT * FROM product";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
+        if($_GET){
+            $type = $_GET['type'];
+            $sql = "SELECT * FROM product WHERE Cac_Type ='$type'";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute(); 
+        }
+        if(!$_GET){
+            $sql = "SELECT * FROM product ";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+        }
+        
+        
+        
+
+
+
+
+
     ?>
     <div id="carouselExampleSlidesOnly" class="carousel  slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -71,35 +87,34 @@
                 <div class="col-lg col-sm-6 col-12">
 
                     <div class="card-shop-menu-img">
-                        <a href="#Gymnocalycium"><img src="./pictures/./gymnocalycium_mihanovichii_variegata_01.jpg" style="transform: translateY(-10%);" class=" img-fluid" alt=""></a>
+                        <a type="submit" href="shop.php?type=2"><img src="./pictures/./gymnocalycium_mihanovichii_variegata_01.jpg" style="transform: translateY(-10%);" class=" img-fluid" alt=""></a>
                         <h5>Gymnocalycium</h5>
+                        
                     </div>
-
-
-
                 </div>
                 <div class="col-lg col-sm-6 col-12">
                     <div class="card-shop-menu-img">
-                        <img src="./pictures/./cb24adb8daf8a52d76ad5f7a736b67e6.jpg" style="transform: translateY(-34%);" class=" img-fluid" alt="">
+                        <a type="submit" href="shop.php?type=1"><img src="./pictures/./cb24adb8daf8a52d76ad5f7a736b67e6.jpg" style="transform: translateY(-34%);" class=" img-fluid" alt=""></a>
                         <h5>Astropitum</h5>
                     </div>
                 </div>
                 <div class="col-lg col-sm-6 col-12">
                     <div class="card-shop-menu-img">
-                        <img src="./pictures/./4c968389f3c89fb0db565a55e48697fb.jpg" style="transform: translateY(-10%);" class=" img-fluid" alt="">
+                        <a type="submit" href="shop.php?type=3"><img src="./pictures/./4c968389f3c89fb0db565a55e48697fb.jpg" style="transform: translateY(-10%);" class=" img-fluid" alt=""></a>
                         <h5>Mammillaria</h5>
                     </div>
                 </div>
                 <div class="col-lg col-sm-6 col-12">
                     <div class="card-shop-menu-img">
-                        <img src="./pictures/./03ee81412c58298551f50f94c16ad4bc.jpg" style="transform: translateY(-5%);" class=" img-fluid" alt="">
+                        <a type="submit" href="shop.php?type=4"><img src="./pictures/./03ee81412c58298551f50f94c16ad4bc.jpg" style="transform: translateY(-5%);" class=" img-fluid" alt=""></a>
                         <h5>Opuntia</h5>
                     </div>
                 </div>
                 <div class="col-lg col-sm-6 col-12">
                     <div class="card-shop-menu-img">
-                        <img src="./pictures/./92232980-59F5-4CD7-B06E-440F090EDD2E_900x.jpg" style="transform: translateY(0%);" class=" img-fluid" alt="">
+                        <a type="submit" href="shop.php?type=5"><img src="./pictures/./92232980-59F5-4CD7-B06E-440F090EDD2E_900x.jpg" style="transform: translateY(0%);" class=" img-fluid" alt=""></a>
                         <h5>Echeveria</h5>
+
                     </div>
                 </div>
 
