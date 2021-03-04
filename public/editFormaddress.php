@@ -6,6 +6,25 @@ $sql = "SELECT * FROM user WHERE uid = $userid";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+$username = $row['uname'];
+if(!$username){
+  $username = 'null';
+}
+$useremail = $row['email'];
+if(!$useremail){
+  $useremail = 'null';
+}
+
+
+$sqlphone = "SELECT * FROM phone WHERE uid = $userid";
+$stmt = $conn->prepare($sqlphone);
+$stmt->execute();
+$phone = $stmt->fetch(PDO::FETCH_ASSOC);
+$userphone = $phone['phonenumber'];
+if(!$useremail){
+  $useremail = 'null';
+}
+
 
 // $connadd = mysqli_connect("localhost","root","","cactus");
 // $sqlx = "SELECT * FROM provinces";
@@ -46,17 +65,17 @@ include "./component/head.php";
       </div>
       <div class="col-lg-8">
 
-        <label for="" style="margin-top:50px; margin-left:40px;">uid </label>
-        <input type="text" name="uid" style="width:300px; height:auto; margin-left:40px;">
+        <!-- <label for="" style="margin-top:50px; margin-left:40px;">uid </label>
+        <input type="text" name="uid" style="width:300px; height:auto; margin-left:40px;"> -->
         <br><br>
         <label for="" style="margin-left:40px;">uname </label>
-        <input type="text" name="uname" style="width:300px; height:auto; margin-left:15px;">
+        <input type="text" name="uname" style="width:300px; height:auto; margin-left:15px;" value="<?php echo $username ?>">
         <br><br>
         <label for="" style="margin-left:40px;">email </label>
-        <input type="text" name="email" style="width:300px; height:auto; margin-left:25px;">
+        <input type="text" name="email" style="width:300px; height:auto; margin-left:25px;" value="<?php echo $useremail ?>">
         <br><br>
         <label for="" style="margin-left:40px;">phone </label>
-        <input type="text" name="phone" style="width:300px; height:auto; margin-left:15px;">
+        <input type="text" name="phone" style="width:300px; height:auto; margin-left:15px;" value="<?php echo $userphone ?>">
         <!--dropdown-->
         <br><br>
         <!-- <label for="" style="margin-left:40px;">ที่อยุ่ :</label>
