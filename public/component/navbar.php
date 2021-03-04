@@ -33,8 +33,8 @@
               About
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./ourstory.html">our story</a>
-              <a class="dropdown-item" href="./Ourstore.html">our store</a>
+              <a class="dropdown-item" href="./ourstory.php">our story</a>
+              <a class="dropdown-item" href="./Ourstore.php">our store</a>
               <a class="dropdown-item" href="./contactus.php">contact us</a>
 
             </div>
