@@ -74,7 +74,7 @@
                           <div class="input-group-prepend">
                             <button class="minusplus btn btn-outline-secondary btn-minus">-</button>
                           </div>
-                          <input class="form-control text-center" value="1" min="1" max="1000" type="number"id="CactusAmount" >
+                          <input class="form-control text-center" value="1" min="1" max="<?php echo $row['Cac_Existing'] ?>" type="number"id="CactusAmount" >
                           <div class="input-group-append">
                             <button class="minusplus btn btn-outline-secondary btn-plus">+</button>
                           </div>
