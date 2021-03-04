@@ -115,6 +115,20 @@
               <a  class="btn btn-outline-warning btn-group-profile" href="./php/logout.php">
                  Logout
               </a>
+              <?php
+                if($userid == 10){
+              ?>
+                <a class="btn btn-outline-info btn-group-profile" href="./addmin/startmin-master/pages/index.php">
+                  For Addmin
+                </a> 
+
+              <?php
+                }
+              ?>
+              <!-- <a class="btn btn-outline-info btn-group-profile" href="#">
+                 For Addmin
+              </a> -->
+              
             </div>
           </div>   
     </div>
